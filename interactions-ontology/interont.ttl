@@ -1,0 +1,282 @@
+@prefix : <https://w3id.org/interont#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/interont> .
+
+<https://w3id.org/interont> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/interont#achieves
+:achieves rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#appliesTo
+:appliesTo rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://w3id.org/interont#expectsResponse
+:expectsResponse rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#from
+:from rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#hasContext
+:hasContext rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#hasInputBinding
+:hasInputBinding rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasParameterBinding .
+
+
+###  https://w3id.org/interont#hasInvariant
+:hasInvariant rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#hasNilBinding
+:hasNilBinding rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasParameterBinding .
+
+
+###  https://w3id.org/interont#hasOutputBinding
+:hasOutputBinding rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasParameterBinding .
+
+
+###  https://w3id.org/interont#hasParameterBinding
+:hasParameterBinding rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#hasPermission
+:hasPermission rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://w3id.org/interont#hasPostcondition
+:hasPostcondition rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#hasPrecondition
+:hasPrecondition rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#hasReceiverContext
+:hasReceiverContext rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasContext .
+
+
+###  https://w3id.org/interont#hasRelevantRole
+:hasRelevantRole rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#hasRole
+:hasRole rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#hasSenderContext
+:hasSenderContext rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasContext .
+
+
+###  https://w3id.org/interont#hasState
+:hasState rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://w3id.org/interont#includesAction
+:includesAction rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#includesMessage
+:includesMessage rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#isCommitedTo
+:isCommitedTo rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#nullifies
+:nullifies rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasParameterBinding .
+
+
+###  https://w3id.org/interont#to
+:to rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#until
+:until rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/interont#usesParameter
+:usesParameter rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/interont#when
+:when rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/interont#Action
+:Action rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#ActionType
+:ActionType rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#Commitment
+:Commitment rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#CommunicationRole
+:CommunicationRole rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#Event
+:Event rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#Goal
+:Goal rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#Group
+:Group rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#Interaction
+:Interaction rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#Message
+:Message rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#MessageKey
+:MessageKey rdf:type owl:Class ;
+            rdfs:subClassOf :MessageParameter .
+
+
+###  https://w3id.org/interont#MessageParameter
+:MessageParameter rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#PayloadItem
+:PayloadItem rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#PermissionType
+:PermissionType rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#ReceiveEvent
+:ReceiveEvent rdf:type owl:Class ;
+              rdfs:subClassOf :Event .
+
+
+###  https://w3id.org/interont#RelevantRole
+:RelevantRole rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#Role
+:Role rdf:type owl:Class .
+
+
+###  https://w3id.org/interont#SendEvent
+:SendEvent rdf:type owl:Class ;
+           rdfs:subClassOf :Event .
+
+
+###  https://w3id.org/interont#State
+:State rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/interont#create
+:create rdf:type owl:NamedIndividual ,
+                 :PermissionType .
+
+
+###  https://w3id.org/interont#delete
+:delete rdf:type owl:NamedIndividual ,
+                 :PermissionType .
+
+
+###  https://w3id.org/interont#forward
+:forward rdf:type owl:NamedIndividual ,
+                  :ActionType .
+
+
+###  https://w3id.org/interont#gossip
+:gossip rdf:type owl:NamedIndividual ,
+                 :ActionType .
+
+
+###  https://w3id.org/interont#in
+:in rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/interont#listener
+:listener rdf:type owl:NamedIndividual ,
+                   :CommunicationRole .
+
+
+###  https://w3id.org/interont#log
+:log rdf:type owl:NamedIndividual ,
+              :ActionType .
+
+
+###  https://w3id.org/interont#nil
+:nil rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/interont#out
+:out rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/interont#read
+:read rdf:type owl:NamedIndividual ,
+               :PermissionType .
+
+
+###  https://w3id.org/interont#receiver
+:receiver rdf:type owl:NamedIndividual ,
+                   :CommunicationRole .
+
+
+###  https://w3id.org/interont#remind
+:remind rdf:type owl:NamedIndividual ,
+                 :ActionType .
+
+
+###  https://w3id.org/interont#sender
+:sender rdf:type owl:NamedIndividual ,
+                 :CommunicationRole .
+
+
+###  https://w3id.org/interont#update
+:update rdf:type owl:NamedIndividual ,
+                 :PermissionType .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
