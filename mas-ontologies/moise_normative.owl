@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#" xml:base="http://www.w3.org/2002/07/owl" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:Onto="http://purl.org/NET/maorg/moise_normative#" xmlns:Structural="http://purl.org/NET/maorg/moise_structural#" xmlns:Functional="http://purl.org/NET/maorg/moise_functional#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	 
+    <owl:Ontology rdf:about="http://purl.org/NET/maorg/moise_normative">
+        <rdfs:label xml:lang="en">Moise normative ontology</rdfs:label>
+        <rdfs:label xml:lang="fr">L'ontologie normative de Moise</rdfs:label>
+        <rdfs:comment xml:lang="en">The Moise normative ontology is blabla.</rdfs:comment>
+        <owl:imports rdf:resource="http://purl.org/NET/maorg/moise_structural"/>
+        <owl:imports rdf:resource="http://purl.org/NET/maorg/moise_functional"/>
+    </owl:Ontology>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_normative#defines">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <inverseOf rdf:resource="http://purl.org/NET/maorg/moise_normative#isDefinedBy"/>
+        <rdfs:domain>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_normative#NormativeSpecification"/>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_normative#Norm"/>
+        </rdfs:range>
+    </ObjectProperty>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_normative#forMission">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_functional#Mission"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_normative#Norm"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_normative#normRelations"/>
+    </ObjectProperty>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_normative#forRole">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_normative#Norm"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_normative#normRelations"/>
+    </ObjectProperty>
+    
+	
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_normative#isDefinedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_normative#NormativeSpecification"/>
+        </rdfs:range>
+        <rdfs:domain>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_normative#Norm"/>
+        </rdfs:domain>
+    </ObjectProperty>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_normative#normType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_normative#Norm"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_normative#NormType"/>
+    </ObjectProperty>
+    
+	
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+	 
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_normative#condition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_normative#Norm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_normative#timeConstraint">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_normative#Norm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+    <Class rdf:about="http://purl.org/NET/maorg/moise_normative#Norm">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_normative#normType"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_normative#NormType"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_normative#forRole"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_normative#forMission"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_functional#Mission"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_normative#NormType">
+        <equivalentClass>
+            <Class>
+                <oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_normative#Obligation"/>
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_normative#Permission"/>
+                </oneOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </Class>
+    
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_normative#NormativeSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.org/NET/maorg/moise_normative#defines"/>
+                        <allValuesFrom rdf:resource="http://purl.org/NET/maorg/moise_normative#Norm"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+    <NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_normative#Obligation">
+        <rdf:type rdf:resource="http://purl.org/NET/maorg/moise_normative#NormType"/>
+    </NamedIndividual>
+    
+
+    <NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_normative#Permission">
+        <rdf:type rdf:resource="http://purl.org/NET/maorg/moise_normative#NormType"/>
+    </NamedIndividual>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+</rdf:RDF>

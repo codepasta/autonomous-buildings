@@ -1,0 +1,203 @@
+@prefix : <http://www.example.org/ba/room#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/ba/room#> .
+
+<http://www.example.org/ba/room#> rdf:type owl:Ontology ;
+                                   owl:imports <http://purl.org/NET/maorg/moise> ,
+                                               <http://purl.org/NET/maorg/moise_functional> ,
+                                               <http://purl.org/NET/maorg/moise_structural> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.example.org/ba/room#fs_automation_application
+:fs_automation_application rdf:type owl:NamedIndividual ,
+                                    <http://purl.org/NET/maorg/moise_functional#FunctionalSpecification> ;
+                           <http://purl.org/NET/maorg/moise_structural#defines> :sch_room_heating_control .
+
+
+###  http://www.example.org/ba/room#grl_room_hvac_controller
+:grl_room_hvac_controller rdf:type owl:NamedIndividual ,
+                                   <http://purl.org/NET/maorg/moise_structural#GroupRole> ;
+                          <http://purl.org/NET/maorg/moise_structural#hasRoleSpecification> :rl_hvac_controller .
+
+
+###  http://www.example.org/ba/room#grl_room_lighting_controller
+:grl_room_lighting_controller rdf:type owl:NamedIndividual ,
+                                       <http://purl.org/NET/maorg/moise_structural#GroupRole> ;
+                              <http://purl.org/NET/maorg/moise_structural#hasRoleSpecification> :rl_light_level_controller .
+
+
+###  http://www.example.org/ba/room#gs_ba_system
+:gs_ba_system rdf:type owl:NamedIndividual ,
+                       <http://purl.org/NET/maorg/moise_structural#GroupSpecification> ;
+              <http://purl.org/NET/maorg/moise_structural#hasSubGroup> :sgs_ba .
+
+
+###  http://www.example.org/ba/room#gs_heat_distribution_system
+:gs_heat_distribution_system rdf:type owl:NamedIndividual ,
+                                      <http://purl.org/NET/maorg/moise_structural#GroupSpecification> .
+
+
+###  http://www.example.org/ba/room#gs_heat_generation_system
+:gs_heat_generation_system rdf:type owl:NamedIndividual ,
+                                    <http://purl.org/NET/maorg/moise_structural#GroupSpecification> .
+
+
+###  http://www.example.org/ba/room#gs_heating_system
+:gs_heating_system rdf:type owl:NamedIndividual ,
+                            <http://purl.org/NET/maorg/moise_structural#GroupSpecification> ;
+                   <http://purl.org/NET/maorg/moise_structural#hasSubGroup> :sgs_heating_system .
+
+
+###  http://www.example.org/ba/room#gs_primary_systems
+:gs_primary_systems rdf:type owl:NamedIndividual ,
+                             <http://purl.org/NET/maorg/moise_structural#GroupSpecification> ;
+                    <http://purl.org/NET/maorg/moise_structural#hasSubGroup> :sgs_primary .
+
+
+###  http://www.example.org/ba/room#gs_room_heating_system
+:gs_room_heating_system rdf:type owl:NamedIndividual ,
+                                 <http://purl.org/NET/maorg/moise_structural#GroupSpecification> .
+
+
+###  http://www.example.org/ba/room#gs_room_hvac_system
+:gs_room_hvac_system rdf:type owl:NamedIndividual ,
+                              <http://purl.org/NET/maorg/moise_structural#GroupSpecification> ;
+                     <http://purl.org/NET/maorg/moise_structural#hasGroupRole> :grl_room_hvac_controller ;
+                     <http://purl.org/NET/maorg/moise_structural#hasSubGroup> :sgs_hvac .
+
+
+###  http://www.example.org/ba/room#gs_room_lighting_system
+:gs_room_lighting_system rdf:type owl:NamedIndividual ,
+                                  <http://purl.org/NET/maorg/moise_structural#GroupSpecification> ;
+                         <http://purl.org/NET/maorg/moise_structural#hasGroupRole> :grl_room_lighting_controller .
+
+
+###  http://www.example.org/ba/room#gs_room_systems
+:gs_room_systems rdf:type owl:NamedIndividual ,
+                          <http://purl.org/NET/maorg/moise_structural#GroupSpecification> ;
+                 <http://purl.org/NET/maorg/moise_structural#hasSubGroup> :sgs_room .
+
+
+###  http://www.example.org/ba/room#gs_ventilation_system
+:gs_ventilation_system rdf:type owl:NamedIndividual ,
+                                <http://purl.org/NET/maorg/moise_structural#GroupSpecification> .
+
+
+###  http://www.example.org/ba/room#msn_room_comfort
+:msn_room_comfort rdf:type owl:NamedIndividual ,
+                           <http://purl.org/NET/maorg/moise_functional#Mission> .
+
+
+###  http://www.example.org/ba/room#org_ba_organization
+:org_ba_organization rdf:type owl:NamedIndividual ,
+                              <http://purl.org/NET/maorg/moise#OrganizationSpecification> ;
+                     <http://purl.org/NET/maorg/moise_structural#defines> :fs_automation_application ,
+                                                                          :ss_ba_structure .
+
+
+###  http://www.example.org/ba/room#pln_heating_control
+:pln_heating_control rdf:type owl:NamedIndividual ,
+                              <http://purl.org/NET/maorg/moise_functional#Plan> .
+
+
+###  http://www.example.org/ba/room#rl_boiler_controller
+:rl_boiler_controller rdf:type owl:NamedIndividual ,
+                               <http://purl.org/NET/maorg/moise_structural#Role> .
+
+
+###  http://www.example.org/ba/room#rl_hvac_controller
+:rl_hvac_controller rdf:type owl:NamedIndividual ,
+                             <http://purl.org/NET/maorg/moise_structural#Role> ;
+                    <http://purl.org/NET/maorg/moise_structural#extends> :rl_hvac_controller .
+
+
+###  http://www.example.org/ba/room#rl_light_level_controller
+:rl_light_level_controller rdf:type owl:NamedIndividual ,
+                                    <http://purl.org/NET/maorg/moise_structural#Role> .
+
+
+###  http://www.example.org/ba/room#rl_room_airquality_controller
+:rl_room_airquality_controller rdf:type owl:NamedIndividual ,
+                                        <http://purl.org/NET/maorg/moise_structural#Role> ;
+                               <http://purl.org/NET/maorg/moise_structural#extends> :rl_hvac_controller .
+
+
+###  http://www.example.org/ba/room#rl_room_temperature_controller
+:rl_room_temperature_controller rdf:type owl:NamedIndividual ,
+                                         <http://purl.org/NET/maorg/moise_structural#Role> ;
+                                <http://purl.org/NET/maorg/moise_structural#extends> :rl_hvac_controller .
+
+
+###  http://www.example.org/ba/room#rlr_boiler_terminalcontroller
+:rlr_boiler_terminalcontroller rdf:type owl:NamedIndividual ,
+                                        <http://purl.org/NET/maorg/moise_structural#Link> ;
+                               <http://purl.org/NET/maorg/moise_structural#hasScope> <http://purl.org/NET/maorg/moise_structural#inter-group> ;
+                               <http://purl.org/NET/maorg/moise_structural#hasSource> :rl_boiler_controller ;
+                               <http://purl.org/NET/maorg/moise_structural#hasTarget> :rl_room_temperature_controller ;
+                               <http://purl.org/NET/maorg/moise_structural#hasType> <http://purl.org/NET/maorg/moise_structural#communication> ;
+                               <http://purl.org/NET/maorg/moise_structural#inGroup> :gs_heating_system ;
+                               <http://purl.org/NET/maorg/moise_structural#biDir> "true"^^xsd:boolean .
+
+
+###  http://www.example.org/ba/room#rlr_heating_ventilation
+:rlr_heating_ventilation rdf:type owl:NamedIndividual ,
+                                  <http://purl.org/NET/maorg/moise_structural#RoleRelation> ;
+                         <http://purl.org/NET/maorg/moise_structural#hasSource> :rl_room_temperature_controller ;
+                         <http://purl.org/NET/maorg/moise_structural#hasTarget> :rl_room_airquality_controller ;
+                         <http://purl.org/NET/maorg/moise_structural#hasType> <http://purl.org/NET/maorg/moise_structural#authority> .
+
+
+###  http://www.example.org/ba/room#sch_room_heating_control
+:sch_room_heating_control rdf:type owl:NamedIndividual ,
+                                   <http://purl.org/NET/maorg/moise_functional#Scheme> ;
+                          <http://purl.org/NET/maorg/moise_functional#schemeMission> :msn_room_comfort .
+
+
+###  http://www.example.org/ba/room#sgs_ba
+:sgs_ba rdf:type owl:NamedIndividual ,
+                 <http://purl.org/NET/maorg/moise_structural#SubGroupSpecification> ;
+        <http://purl.org/NET/maorg/moise_structural#child> :gs_primary_systems ,
+                                                           :gs_room_systems .
+
+
+###  http://www.example.org/ba/room#sgs_heating_system
+:sgs_heating_system rdf:type owl:NamedIndividual ,
+                             <http://purl.org/NET/maorg/moise_structural#SubGroupSpecification> ;
+                    <http://purl.org/NET/maorg/moise_structural#child> :gs_heat_distribution_system ,
+                                                                       :gs_heat_generation_system .
+
+
+###  http://www.example.org/ba/room#sgs_hvac
+:sgs_hvac rdf:type owl:NamedIndividual ,
+                   <http://purl.org/NET/maorg/moise_structural#SubGroupSpecification> ;
+          <http://purl.org/NET/maorg/moise_structural#child> :gs_heating_system ,
+                                                             :gs_ventilation_system .
+
+
+###  http://www.example.org/ba/room#sgs_primary
+:sgs_primary rdf:type owl:NamedIndividual ,
+                      <http://purl.org/NET/maorg/moise_structural#SubGroupSpecification> ;
+             <http://purl.org/NET/maorg/moise_structural#child> :gs_heating_system .
+
+
+###  http://www.example.org/ba/room#sgs_room
+:sgs_room rdf:type owl:NamedIndividual ,
+                   <http://purl.org/NET/maorg/moise_structural#SubGroupSpecification> ;
+          <http://purl.org/NET/maorg/moise_structural#child> :gs_room_hvac_system ,
+                                                             :gs_room_lighting_system .
+
+
+###  http://www.example.org/ba/room#ss_ba_structure
+:ss_ba_structure rdf:type owl:NamedIndividual ,
+                          <http://purl.org/NET/maorg/moise_structural#StructuralSpecification> ;
+                 <http://purl.org/NET/maorg/moise_structural#hasRoot> :gs_ba_system .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

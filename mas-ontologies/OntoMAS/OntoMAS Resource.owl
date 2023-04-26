@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/artur/ontologies/2014/10/untitled-ontology-343"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/artur/ontologies/2014/10/untitled-ontology-343">
+    <Prefix name="" IRI="http://www.semanticweb.org/artur/ontologies/2014/10/untitled-ontology-343"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#UnachieveMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TestGoal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#EA_can-perceive"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UntellHowMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AskHowMessage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-plan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-receiver"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Goal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Operation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgentBelief"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SelfBelief"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_has-subspace"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Ag_has-belief"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_has-goal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#ObservableProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#EA_is-in"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TellMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AskIfMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ag_Belief"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Ag_is-triggered-by"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Env_Percept"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#PermissionNorm"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-subgoal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PerceptBelief"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TellHowMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AchieveMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Mission"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_contains-artifact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExternalAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Goal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#EA_is-focused"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Action"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Group"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InternalAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-mission"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObservableEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_sends-message"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AskAllMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#ObligationNorm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UntellMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#ProhibitionNorm"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-action"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OA_adopts-role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-goal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_extends-role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OA_has-member"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AchievementGoal"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AchieveMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AchievementGoal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Goal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgentBelief"/>
+        <Class IRI="#Ag_Belief"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AskAllMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AskHowMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AskIfMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExternalAction"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InternalAction"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObservableEvent"/>
+        <Class IRI="#Env_Percept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PerceptBelief"/>
+        <Class IRI="#Ag_Belief"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SelfBelief"/>
+        <Class IRI="#Ag_Belief"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TellHowMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TellMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TestGoal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Goal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnachieveMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UntellHowMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UntellMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#ObligationNorm"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#PermissionNorm"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#ProhibitionNorm"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#ObservableProperty"/>
+        <Class IRI="#Env_Percept"/>
+    </SubClassOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Ag_has-belief"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Ag_is-triggered-by"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#EA_can-perceive"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#EA_is-focused"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#EA_is-in"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#OA_adopts-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#OA_has-member"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Group"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Group"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-subgoal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Goal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_extends-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_has-goal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Mission"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-mission"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_contains-artifact"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_has-subspace"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-action"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-goal"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-plan"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-receiver"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_sends-message"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Ag_has-belief"/>
+        <Class IRI="#Ag_Belief"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Ag_is-triggered-by"/>
+        <ObjectUnionOf>
+            <Class IRI="#Ag_Belief"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Goal"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#EA_can-perceive"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#ObservableProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#EA_is-focused"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#EA_is-in"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#OA_adopts-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#OA_has-member"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-subgoal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Goal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_extends-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_has-goal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Goal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-mission"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Mission"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_contains-artifact"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_has-subspace"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Operation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+        <Class IRI="#Env_Percept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-action"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Action"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-goal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Goal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-plan"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-receiver"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_sends-message"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </ObjectPropertyRange>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+                <Variable IRI="urn:swrl#s"/>
+                <Variable IRI="urn:swrl#p"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#EA_is-in"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#s"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#EA_can-perceive"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#p"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_contains-artifact"/>
+                <Variable IRI="urn:swrl#space"/>
+                <Variable IRI="urn:swrl#artifact"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+                <Variable IRI="urn:swrl#artifact"/>
+                <Variable IRI="urn:swrl#op"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+                <Variable IRI="urn:swrl#space"/>
+                <Variable IRI="urn:swrl#op"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_contains-artifact"/>
+                <Variable IRI="urn:swrl#space"/>
+                <Variable IRI="urn:swrl#artifact"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+                <Variable IRI="urn:swrl#artifact"/>
+                <Variable IRI="urn:swrl#percept"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+                <Variable IRI="urn:swrl#space"/>
+                <Variable IRI="urn:swrl#percept"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_has-subspace"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+                <Variable IRI="urn:swrl#b"/>
+                <Variable IRI="urn:swrl#p"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#p"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-plan"/>
+                <Variable IRI="urn:swrl#ag"/>
+                <Variable IRI="urn:swrl#pl"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-action"/>
+                <Variable IRI="urn:swrl#pl"/>
+                <Variable IRI="urn:swrl#ac"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-action"/>
+                <Variable IRI="urn:swrl#ag"/>
+                <Variable IRI="urn:swrl#ac"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Action</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An action is what the agent does that effects the environment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A message goes from one agent to another.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+

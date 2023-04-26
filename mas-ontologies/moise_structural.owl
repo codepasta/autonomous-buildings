@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#" xml:base="http://www.w3.org/2002/07/owl" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:Onto="http://purl.org/NET/maorg/moise_structural#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Ontology rdf:about="http://purl.org/NET/maorg/moise_structural"/>
+    
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#belongsTo -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#belongsTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupRole"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#child -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#child">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#SubGroupSpecification"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#subGroupRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#defines -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#defines">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#StructuralSpecification"/>
+        <rdfs:range>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#Role"/>
+                </unionOf>
+            </Class>
+        </rdfs:range>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#extends -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#extends">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#roleRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#hasGroupRole -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#hasGroupRole">
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupRole"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#hasRoleSpecification -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#hasRoleSpecification">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupRole"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#hasRoot -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#hasRoot">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+                </unionOf>
+            </Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#StructuralSpecification"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#hasScope -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#hasScope">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelation"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelationScope"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#roleRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#hasSource -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#hasSource">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelation"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#roleRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#hasSubGroup -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#hasSubGroup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#SubGroupSpecification"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#inverseProperties"/>
+        <inverseOf rdf:resource="http://purl.org/NET/maorg/moise_structural#parent"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#subGroupRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#hasSuperGroup -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#hasSuperGroup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#SubGroupSpecification"/>
+        <inverseOf rdf:resource="http://purl.org/NET/maorg/moise_structural#child"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#subGroupRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#hasTarget -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#hasTarget">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelation"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#roleRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#hasType -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#hasType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#Link"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#LinkType"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#roleRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#inGroup -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#inGroup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelation"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#roleRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#inverseProperties -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#inverseProperties"/>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#isDefinedBy -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#isDefinedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <inverseOf rdf:resource="http://purl.org/NET/maorg/moise_structural#defines"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#inverseProperties"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#Role"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#StructuralSpecification"/>
+                </unionOf>
+            </Class>
+        </rdfs:range>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#isSourceFor -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#isSourceFor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelation"/>
+        <inverseOf rdf:resource="http://purl.org/NET/maorg/moise_structural#hasSource"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#inverseProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#roleRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#isTargetFor -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#isTargetFor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelation"/>
+        <inverseOf rdf:resource="http://purl.org/NET/maorg/moise_structural#hasTarget"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#inverseProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#roleRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#parent -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#parent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#SubGroupSpecification"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#subGroupRelations"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#roleRelations -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#roleRelations"/>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#subGroupRelations -->
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_structural#subGroupRelations"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#biDir -->
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_structural#biDir">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#cardinality -->
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_structural#cardinality"/>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#extends_to_subgroup -->
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_structural#extends_to_subgroup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#maxAgents -->
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_structural#maxAgents">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupRole"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#cardinality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+    <!-- http://purl.org/NET/maorg/moise_structural#maxSubGroups -->
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_structural#maxSubGroups">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#SubGroupSpecification"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#cardinality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#minAgents -->
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_structural#minAgents">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupRole"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#cardinality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#minSubGroups -->
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_structural#minSubGroups">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_structural#SubGroupSpecification"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_structural#cardinality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#Compatibility -->
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_structural#Compatibility">
+        <rdfs:subClassOf rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelation"/>
+        <disjointWith rdf:resource="http://purl.org/NET/maorg/moise_structural#Link"/>
+    </Class>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#CompatibilityRelation -->
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_structural#CompatibilityRelation"/>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#GroupRole -->
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_structural#GroupRole">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#hasRoleSpecification"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#belongsTo"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#GroupSpecification -->
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_structural#GroupSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#isDefinedBy"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#StructuralSpecification"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#Link -->
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_structural#Link">
+        <rdfs:subClassOf rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelation"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#hasType"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#LinkType"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#LinkType -->
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_structural#LinkType">
+        <equivalentClass>
+            <Class>
+                <oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#communication"/>
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#authority"/>
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#acquaintance"/>
+                </oneOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </Class>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#Role -->
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_structural#Role">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#isDefinedBy"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#StructuralSpecification"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#RoleRelation -->
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_structural#RoleRelation">
+        <equivalentClass>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#CompatibilityRelation"/>
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#Link"/>
+                </unionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#hasScope"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#RoleRelationScope"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#inGroup"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#biDir"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#hasTarget"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#hasSource"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#Role"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#RoleRelationScope -->
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_structural#RoleRelationScope">
+        <equivalentClass>
+            <Class>
+                <oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#inter-group"/>
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#intra-group"/>
+                </oneOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </Class>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#StructuralSpecification -->
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_structural#StructuralSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#defines"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+                                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#Role"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#hasRoot"/>
+                        <allValuesFrom rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#SubGroupSpecification -->
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_structural#SubGroupSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#child"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#maxSubGroups"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#parent"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_structural#minSubGroups"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#acquaintance -->
+
+    <NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_structural#acquaintance">
+        <rdf:type rdf:resource="http://purl.org/NET/maorg/moise_structural#LinkType"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#authority -->
+
+    <NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_structural#authority">
+        <rdf:type rdf:resource="http://purl.org/NET/maorg/moise_structural#LinkType"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#communication -->
+
+    <NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_structural#communication">
+        <rdf:type rdf:resource="http://purl.org/NET/maorg/moise_structural#LinkType"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#inter-group -->
+
+    <NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_structural#inter-group"/>
+    
+
+
+    <!-- http://purl.org/NET/maorg/moise_structural#intra-group -->
+
+    <NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_structural#intra-group"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#GroupRole"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#GroupSpecification"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#LinkType"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#Role"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#RoleRelation"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#RoleRelationScope"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#StructuralSpecification"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_structural#SubGroupSpecification"/>
+        </members>
+    </rdf:Description>
+</rdf:RDF>
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->

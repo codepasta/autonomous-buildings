@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://purl.org/NET/maorg/moise_functional" uri="moise_functional.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/NET/maorg/moise_entity" uri="moise_entity.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/NET/maorg/moise_functional" uri="moise_functional.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/NET/maorg/moise_structural" uri="moise_structural.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1678113331295" name="duplicate:http://www.semanticweb.org/artur/ontologies/2014/10/untitled-ontology-343" uri="OntoMAS/Example%20of%20OntologyMAS%20Model%20Instantiated.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1678113331295" name="duplicate:http://www.semanticweb.org/artur/ontologies/2014/10/untitled-ontology-343" uri="OntoMAS/OntoMAS%20Resource.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1678113331295" name="duplicate:http://www.w3.org/2002/07/owl" uri="moise.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1678113331295" name="duplicate:http://www.w3.org/2002/07/owl" uri="moise_entity.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1678113331295" name="duplicate:http://www.w3.org/2002/07/owl" uri="moise_functional.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1678113331295" name="duplicate:http://www.w3.org/2002/07/owl" uri="moise_normative.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1678113331295" name="duplicate:http://www.w3.org/2002/07/owl" uri="moise_structural.owl"/>
+    </group>
+</catalog>

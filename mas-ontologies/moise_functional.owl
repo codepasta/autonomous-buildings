@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#" xml:base="http://www.w3.org/2002/07/owl" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:Onto="http://purl.org/NET/maorg/moise_functional#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Ontology rdf:about="http://purl.org/NET/maorg/moise_functional"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#belongsToPlan">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_functional#Plan"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#PlanOrder"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_functional#planProperties"/>
+    </ObjectProperty>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#defines">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <inverseOf rdf:resource="http://purl.org/NET/maorg/moise_functional#isDefinedBy"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#FunctionalSpecification"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#Scheme"/>
+                </unionOf>
+            </Class>
+        </rdfs:range>
+    </ObjectProperty>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#fulfillsGoal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_functional#Goal"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Plan"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_functional#planProperties"/>
+    </ObjectProperty>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#hasFulfillmentPlan">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Goal"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_functional#Plan"/>
+        <inverseOf rdf:resource="http://purl.org/NET/maorg/moise_functional#fulfillsGoal"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_functional#planProperties"/>
+    </ObjectProperty>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#hasGoal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_functional#Goal"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#PlanOrder"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_functional#planProperties"/>
+    </ObjectProperty>
+	
+	
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#hasGoalType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_functional#GoalType"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Goal"/>
+    </ObjectProperty>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#hasPlanOperator">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Plan"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_functional#PlanOperatorType"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_functional#planProperties"/>
+    </ObjectProperty>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#hasRoot">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#Scheme"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#Goal"/>
+                </unionOf>
+            </Class>
+        </rdfs:range>
+    </ObjectProperty>
+    
+	
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#isDefinedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#FunctionalSpecification"/>
+                </unionOf>
+            </Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#Scheme"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </ObjectProperty>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#missionGoal">
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_functional#Goal"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Mission"/>
+    </ObjectProperty>
+    
+	
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#monitoringScheme">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Scheme"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_functional#Scheme"/>
+    </ObjectProperty>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#planProperties"/>
+    
+
+    <ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#preferredMission">
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_functional#Mission"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Mission"/>
+    </ObjectProperty>
+	
+	
+	<ObjectProperty rdf:about="http://purl.org/NET/maorg/moise_functional#schemeMission">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/maorg/moise_functional#Mission"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Scheme"/>
+    </ObjectProperty>
+	
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_functional#argument">
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Goal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_functional#cardinality"/>
+    
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_functional#goalOrder">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#PlanOrder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_functional#hasDescription">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Goal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_functional#hasTtf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Goal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_functional#maxAgentsMission">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Mission"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_functional#cardinality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_functional#minAgentsGoal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Goal"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_functional#cardinality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_functional#minAgentsMission">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Mission"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/maorg/moise_functional#cardinality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </DatatypeProperty>
+    
+
+    <DatatypeProperty rdf:about="http://purl.org/NET/maorg/moise_functional#timeConstraint">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/maorg/moise_functional#Norm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_functional#FunctionalSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.org/NET/maorg/moise_functional#defines"/>
+                        <allValuesFrom rdf:resource="http://purl.org/NET/maorg/moise_functional#Scheme"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_functional#Goal">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </Class>
+    
+	
+	 <Class rdf:about="http://purl.org/NET/maorg/moise_functional#GoalType">
+        <equivalentClass>
+            <Class>
+                <oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#achievement"/>
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#maintainance"/>
+                </oneOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </Class>
+    
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_functional#Mission">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </Class>
+    
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_functional#Plan">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_functional#hasPlanOperator"/>
+                <onClass rdf:resource="http://purl.org/NET/maorg/moise_functional#PlanOperatorType"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_functional#PlanOperatorType">
+        <equivalentClass>
+            <Class>
+                <oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#Sequence"/>
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#Choice"/>
+                    <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#Parallel"/>
+                </oneOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </Class>
+    
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_functional#PlanOrder">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.org/NET/maorg/moise_functional#goalOrder"/>
+                <someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.org/NET/maorg/moise_functional#hasGoal"/>
+                        <onClass rdf:resource="http://purl.org/NET/maorg/moise_functional#Goal"/>
+                        <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </rdfs:subClassOf>		
+        <rdfs:subClassOf>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.org/NET/maorg/moise_functional#belongsToPlan"/>
+                        <onClass rdf:resource="http://purl.org/NET/maorg/moise_functional#Plan"/>
+                        <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+    <Class rdf:about="http://purl.org/NET/maorg/moise_functional#Scheme">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </Class>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_functional#Choice">
+        <rdf:type rdf:resource="http://purl.org/NET/maorg/moise_functional#PlanOperatorType"/>
+    </NamedIndividual>
+    
+
+    <NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_functional#Parallel">
+        <rdf:type rdf:resource="http://purl.org/NET/maorg/moise_functional#PlanOperatorType"/>
+    </NamedIndividual>
+    
+
+    <NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_functional#Sequence">
+        <rdf:type rdf:resource="http://purl.org/NET/maorg/moise_functional#PlanOperatorType"/>
+    </NamedIndividual>
+    
+	
+	<NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_functional#achievement">
+        <rdf:type rdf:resource="http://purl.org/NET/maorg/moise_functional#GoalType"/>
+    </NamedIndividual>
+    
+
+    <NamedIndividual rdf:about="http://purl.org/NET/maorg/moise_functional#maintainance">
+        <rdf:type rdf:resource="http://purl.org/NET/maorg/moise_functional#GoalType"/>
+    </NamedIndividual>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#FunctionalSpecification"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#Goal"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#Mission"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#Plan"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#PlanOrder"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#PlanOperatorType"/>
+            <rdf:Description rdf:about="http://purl.org/NET/maorg/moise_functional#Scheme"/>
+        </members>
+    </rdf:Description>
+</rdf:RDF>
