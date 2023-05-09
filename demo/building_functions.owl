@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/building_functions#"
+     xml:base="http://www.example.org/building_functions"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sigma="http://w3id.org/unified-engineering/sigma#">
+    <owl:Ontology rdf:about="http://www.example.org/building-functions">
+        <owl:imports rdf:resource="http://w3id.org/unified-engineering/sigma"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/building-functions#delegation_limit_co2_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#delegation_limit_co2_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Delegation"/>
+        <sigma:hasDesiredState rdf:resource="http://www.example.org/building-functions#goal_state_air_quality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#delegation_maintain_light_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#delegation_maintain_light_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Delegation"/>
+        <sigma:hasDesiredState rdf:resource="http://www.example.org/building-functions#goal_state_light_level"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#delegation_maintain_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#delegation_maintain_temperature">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Delegation"/>
+        <sigma:hasDesiredState rdf:resource="http://www.example.org/building-functions#goal_state_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_limit_co2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_limit_co2">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Goal"/>
+        <sigma:achievedBy rdf:resource="http://www.example.org/building-functions#delegation_limit_co2_level"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_maintain_constant_light_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_maintain_constant_light_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Goal"/>
+        <sigma:achievedBy rdf:resource="http://www.example.org/building-functions#delegation_maintain_light_level"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_maintain_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_maintain_temperature">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Goal"/>
+        <sigma:achievedBy rdf:resource="http://www.example.org/building-functions#delegation_maintain_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_prevent_sun_glare -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_prevent_sun_glare">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Goal"/>
+        <sigma:achievedBy rdf:resource="http://www.example.org/building-functions#operation_lower_blinds"/>
+        <sigma:hasDesiredState rdf:resource="http://www.example.org/building-functions#goal_state_incident_sun_light"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_state_air_quality -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_state_air_quality">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#GoalState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_state_incident_sun_light -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_state_incident_sun_light">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#GoalState"/>
+        <sigma:refersToVariable rdf:resource="http://www.example.org/building-functions#process_var_average_luminosity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_state_light_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_state_light_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#GoalState"/>
+        <sigma:refersToVariable rdf:resource="http://www.example.org/building-functions#process_var_average_luminosity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_state_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_state_temperature">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#GoalState"/>
+        <sigma:refersToVariable rdf:resource="http://www.example.org/building-functions#process_var_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#operation_lower_blinds -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#operation_lower_blinds">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Operation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_cooling -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_cooling">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Process"/>
+        <sigma:hasMechanism rdf:resource="http://www.example.org/building-functions#process_mech_heat_exchange"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_ctx_air -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_ctx_air">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessContext"/>
+        <sigma:flowsTo rdf:resource="http://www.example.org/building-functions#sys_ctx_room"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_heating -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_heating">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Process"/>
+        <sigma:hasMechanism rdf:resource="http://www.example.org/building-functions#process_mech_heat_exchange"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_light_emission -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_light_emission">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_light_transmission_modulation -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_light_transmission_modulation">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_mech_air_movement -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_mech_air_movement">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessMechanism"/>
+        <sigma:hasDependentVariable rdf:resource="http://www.example.org/building-functions#process_var_co2_level"/>
+        <sigma:hasIndependentVariable rdf:resource="http://www.example.org/building-functions#process_var_fresh_air_intake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_mech_heat_exchange -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_mech_heat_exchange">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessMechanism"/>
+        <sigma:energyFlowsTo rdf:resource="http://www.example.org/building-functions#process_ctx_air"/>
+        <sigma:hasDependentVariable rdf:resource="http://www.example.org/building-functions#process_var_temperature"/>
+        <sigma:hasIndependentVariable rdf:resource="http://www.example.org/building-functions#process_var_thermal_energy_input"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_average_luminosity -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_average_luminosity">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_co2_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_co2_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_dimming_output -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_dimming_output">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_fresh_air_intake -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_fresh_air_intake">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_outdoor_light_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_outdoor_light_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_sun_elevation -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_sun_elevation">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_sunblinds_aperture -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_sunblinds_aperture">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_temperature">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_thermal_energy_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_thermal_energy_input">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_ventilation -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_ventilation">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#req_ensure_optimal_lighting -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#req_ensure_optimal_lighting">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#FunctionalRequirement"/>
+        <sigma:hasGoal rdf:resource="http://www.example.org/building-functions#goal_maintain_constant_light_level"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#req_maintain_air_quality -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#req_maintain_air_quality">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#FunctionalRequirement"/>
+        <sigma:hasGoal rdf:resource="http://www.example.org/building-functions#goal_limit_co2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#req_maintain_thermal_comfort -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#req_maintain_thermal_comfort">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#FunctionalRequirement"/>
+        <sigma:hasGoal rdf:resource="http://www.example.org/building-functions#goal_maintain_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#req_prevent_sun_glare -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#req_prevent_sun_glare">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#FunctionalRequirement"/>
+        <sigma:hasGoal rdf:resource="http://www.example.org/building-functions#goal_prevent_sun_glare"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#sys_ctx_room -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#sys_ctx_room">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#SystemContext"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

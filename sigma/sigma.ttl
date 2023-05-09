@@ -1,0 +1,356 @@
+@prefix : <http://w3id.org/unified-engineering/sigma#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://w3id.org/unified-engineering/sigma> .
+
+<http://w3id.org/unified-engineering/sigma> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://w3id.org/unified-engineering/sigma#accomplishedBy
+:accomplishedBy rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#accomplishes
+:accomplishes rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#achievedBy
+:achievedBy rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#actuates
+:actuates rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#addresses
+:addresses rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#affectedVariable
+:affectedVariable rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#carriesOut
+:carriesOut rdf:type owl:ObjectProperty ;
+            rdfs:domain :ProcessRole ;
+            rdfs:range :Intent .
+
+
+###  http://w3id.org/unified-engineering/sigma#energyFlowsFrom
+:energyFlowsFrom rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :flowsFrom .
+
+
+###  http://w3id.org/unified-engineering/sigma#energyFlowsTo
+:energyFlowsTo rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :flowsTo .
+
+
+###  http://w3id.org/unified-engineering/sigma#flowsFrom
+:flowsFrom rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#flowsTo
+:flowsTo rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#fulfills
+:fulfills rdf:type owl:ObjectProperty ;
+          rdfs:domain :System .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasComponent
+:hasComponent rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasPart ;
+              rdfs:domain :Component ,
+                          :System ;
+              rdfs:range :Component .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasCondition
+:hasCondition rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasDependentVariable
+:hasDependentVariable rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasVariable .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasDesiredState
+:hasDesiredState rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasGoal
+:hasGoal rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasIndependentVariable
+:hasIndependentVariable rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :hasVariable .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasInput
+:hasInput rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasInterface .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasIntent
+:hasIntent rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasInterface
+:hasInterface rdf:type owl:ObjectProperty ;
+              rdfs:domain :AutomationProgram .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasMechanism
+:hasMechanism rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasOutput
+:hasOutput rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasInterface .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasParameter
+:hasParameter rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasInterface .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasPart
+:hasPart rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasPostcondition
+:hasPostcondition rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasCondition .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasPrecondition
+:hasPrecondition rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasCondition .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasSubProcess
+:hasSubProcess rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasSubsystem
+:hasSubsystem rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasPart ;
+              rdfs:domain :Subsystem ,
+                          :System ;
+              rdfs:range :Subsystem .
+
+
+###  http://w3id.org/unified-engineering/sigma#hasVariable
+:hasVariable rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#leadsTo
+:leadsTo rdf:type owl:ObjectProperty ;
+         rdfs:domain :ProcessAction ;
+         rdfs:range :GoalState .
+
+
+###  http://w3id.org/unified-engineering/sigma#massFlowsFrom
+:massFlowsFrom rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :flowsFrom .
+
+
+###  http://w3id.org/unified-engineering/sigma#massFlowsTo
+:massFlowsTo rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :flowsTo .
+
+
+###  http://w3id.org/unified-engineering/sigma#measures
+:measures rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#models
+:models rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#partOf
+:partOf rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#refersToVariable
+:refersToVariable rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#relatedTo
+:relatedTo rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#relevantIn
+:relevantIn rdf:type owl:ObjectProperty ;
+            rdfs:domain :ProcessRole ;
+            rdfs:range :AffectedEnvironment .
+
+
+###  http://w3id.org/unified-engineering/sigma#suitableFor
+:suitableFor rdf:type owl:ObjectProperty ;
+             rdfs:domain :AutomationStrategy ;
+             rdfs:range :ProcessRole .
+
+
+###  http://w3id.org/unified-engineering/sigma#utilizedBy
+:utilizedBy rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/sigma#utilizes
+:utilizes rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/unified-engineering/sigma#Actuator
+:Actuator rdf:type owl:Class ;
+          rdfs:subClassOf :Component .
+
+
+###  http://w3id.org/unified-engineering/sigma#AffectedEnvironment
+:AffectedEnvironment rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/sigma#Application
+:Application rdf:type owl:Class ;
+             rdfs:subClassOf :AutomationDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#AutomationDescription
+:AutomationDescription rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/sigma#AutomationProgram
+:AutomationProgram rdf:type owl:Class ;
+                   rdfs:subClassOf :AutomationStrategy .
+
+
+###  http://w3id.org/unified-engineering/sigma#AutomationStrategy
+:AutomationStrategy rdf:type owl:Class ;
+                    rdfs:subClassOf :AutomationDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#Component
+:Component rdf:type owl:Class ;
+           rdfs:subClassOf :DesignDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#ComponentAction
+:ComponentAction rdf:type owl:Class ;
+                 rdfs:subClassOf :DesignDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#Condition
+:Condition rdf:type owl:Class ;
+           rdfs:subClassOf :RequirementsDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#Delegation
+:Delegation rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/sigma#DesignDescription
+:DesignDescription rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/sigma#FunctionalRequirement
+:FunctionalRequirement rdf:type owl:Class ;
+                       rdfs:subClassOf :Requirement .
+
+
+###  http://w3id.org/unified-engineering/sigma#Goal
+:Goal rdf:type owl:Class ;
+      rdfs:subClassOf :RequirementsDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#GoalState
+:GoalState rdf:type owl:Class ;
+           rdfs:subClassOf :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#Intent
+:Intent rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/sigma#Operation
+:Operation rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/sigma#Process
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#ProcessAction
+:ProcessAction rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/sigma#ProcessContext
+:ProcessContext rdf:type owl:Class ;
+                rdfs:subClassOf :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#ProcessDescription
+:ProcessDescription rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/sigma#ProcessMechanism
+:ProcessMechanism rdf:type owl:Class ;
+                  rdfs:subClassOf :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#ProcessModel
+:ProcessModel rdf:type owl:Class ;
+              rdfs:subClassOf :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#ProcessRole
+:ProcessRole rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/sigma#ProcessVariable
+:ProcessVariable rdf:type owl:Class ;
+                 rdfs:subClassOf :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#Requirement
+:Requirement rdf:type owl:Class ;
+             rdfs:subClassOf :RequirementsDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#RequirementsDescription
+:RequirementsDescription rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/sigma#Sensor
+:Sensor rdf:type owl:Class ;
+        rdfs:subClassOf :Component .
+
+
+###  http://w3id.org/unified-engineering/sigma#Subsystem
+:Subsystem rdf:type owl:Class ;
+           rdfs:subClassOf :DesignDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#System
+:System rdf:type owl:Class ;
+        rdfs:subClassOf :DesignDescription .
+
+
+###  http://w3id.org/unified-engineering/sigma#SystemContext
+:SystemContext rdf:type owl:Class ;
+               rdfs:subClassOf :DesignDescription .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
