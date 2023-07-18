@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/unified-engineering/building/processes#"
+     xml:base="http://w3id.org/unified-engineering/building/processes"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://w3id.org/unified-engineering/building/processes">
+        <owl:imports rdf:resource="http://w3id.org/unified-engineering/process-model"/>
+        <rdfs:comment>An ontology of physical processes common in buildings</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#AirflowProcess -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#AirflowProcess">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/building/processes#MassTransferProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#Combustion -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#Combustion">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/building/processes#HeatGeneration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#ConductiveExchange -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#ConductiveExchange">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/building/processes#HeatExchangeMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#ConvectiveExchange -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#ConvectiveExchange">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/building/processes#HeatExchangeMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#CoolingProcess -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#CoolingProcess">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/building/processes#ThermalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#Depressurization -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#Depressurization">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/process-model#ProcessMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#HeatExchangeMechanism -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#HeatExchangeMechanism">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/building/processes#ThermalMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#HeatGeneration -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#HeatGeneration">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/building/processes#ThermalMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#HeatingProcess -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#HeatingProcess">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/building/processes#ThermalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#Illumination -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#Illumination">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/process-model#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#LightEmission -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#LightEmission">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/process-model#ProcessMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#LiquidFlowProcess -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#LiquidFlowProcess">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/building/processes#MassTransferProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#MassTransferProcess -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#MassTransferProcess">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/process-model#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#Pressurization -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#Pressurization">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/process-model#ProcessMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#RadiativeExchange -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#RadiativeExchange">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/building/processes#HeatExchangeMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#ThermalMechanism -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#ThermalMechanism">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/process-model#ProcessMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/building/processes#ThermalProcess -->
+
+    <owl:Class rdf:about="http://w3id.org/unified-engineering/building/processes#ThermalProcess">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/process-model#Process"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,636 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3id.org/elementary#"
+     xml:base="http://www.w3id.org/elementary"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.w3id.org/elementary"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/elementary#affects -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#affects"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#decreases -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#decreases">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#modulates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#effectiveAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#effectiveAt"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasCausationAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasCausationAction"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasComponentAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasComponentAction"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasControlInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasControlInput"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasControlOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasControlOutput"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasDependentVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasDependentVariable"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasEffect -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasEffect"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasFaultMode -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasFaultMode"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasIndependentVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasIndependentVariable"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasInputEnergy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasInputEnergy"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasManipulatedVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasManipulatedVariable">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#hasIndependentVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasObservedVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasObservedVariable"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasOutputEnergy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasOutputEnergy"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasProcessAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasProcessAction"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasProcessMechanism -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasProcessMechanism">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasStereotype"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasProcessMechanism"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasProcessPathway -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasProcessPathway"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasProcessPosition -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasProcessPosition"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasQuantity -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasQuantity"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasStereotype -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasStereotype"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasSubstance -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasSubstance"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#increases -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#increases">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#modulates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#isRelatedToVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#isRelatedToVariable"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#maintains -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#maintains">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#modulates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#manipulates -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#manipulates">
+        <owl:equivalentProperty rdf:resource="http://www.w3id.org/elementary#modulates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#measures -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#measures"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#modulatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#modulatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#modulates -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#modulates">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasProcessMechanism"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasDependentVariable"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#separates -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#separates"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/elementary#ActuationConnectionPoint -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ActuationConnectionPoint">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ConnectionPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#Actuator -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#Actuator">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#Acutation -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#Acutation">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#AutomationConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#AutomationConcept -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#AutomationConcept"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#Component -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#Component">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#SystemDesignConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ComponentAction -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ComponentAction">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#SystemDesignConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ConnectionPoint -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ConnectionPoint">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#SystemDesignConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#DiscreteState -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#DiscreteState">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#Signal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ElectricalConduction -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ElectricalConduction">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#EnergyTransfer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#Energy -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#Energy">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalStuff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#EnergyConversion -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#EnergyConversion">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ProcessMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#EnergyForm -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#EnergyForm">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#Energy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#EnergyTransfer -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#EnergyTransfer">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ProcessMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#FaultEffect -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#FaultEffect">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#FaultMode -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#FaultMode">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ForceTransfer -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ForceTransfer">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ProcessMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#InletConnectionPoint -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#InletConnectionPoint">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ConnectionPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#MassTransfer -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#MassTransfer">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ProcessMechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#MeasurementConnectionPoint -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#MeasurementConnectionPoint">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ConnectionPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#MechanicalForce -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#MechanicalForce">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalStuff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#Modulating -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#Modulating">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#Signal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#OutletConnectionPoint -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#OutletConnectionPoint">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ConnectionPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#PhysicalProcessConcept -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#PhysicalStuff -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#PhysicalStuff">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ProcessAction -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ProcessAction">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ProcessMechanism -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ProcessMechanism">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ProcessPathway -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ProcessPathway">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ProcessPosition -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ProcessPosition">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ProcessVariable -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ProcessVariable">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#Sensor -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#Signal -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#Signal">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#AutomationConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#Stereotype -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#Stereotype">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#SystemDesignConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#StreamJoiner -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#StreamJoiner">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#StreamSplitter -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#StreamSplitter">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#SubSystem -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#SubSystem">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#SystemDesignConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#Substance -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#Substance">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalStuff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#System -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#System">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#SystemDesignConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#SystemDesignConcept -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#SystemDesignConcept"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ThermalConduction -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ThermalConduction">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#EnergyTransfer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ThermalConvection -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ThermalConvection">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#EnergyTransfer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/elementary#ThermalRadiation -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#ThermalRadiation">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#EnergyTransfer"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/elementary#analog_signal -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary#analog_signal"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#chemical_energy -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary#chemical_energy">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#EnergyForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary#control_signal -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary#control_signal"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#digital_signal -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary#digital_signal"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#electrical_energy -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary#electrical_energy">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#EnergyForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary#kinetic_energy -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary#kinetic_energy">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#EnergyForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary#mechanical_energy -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary#mechanical_energy">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#EnergyForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary#mechanical_force -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary#mechanical_force"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#thermal_energy -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary#thermal_energy">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#EnergyForm"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -14,6 +14,10 @@
 #    Individuals
 #################################################################
 
+###  http://www.example.org/buidling-system#room_component_rad
+<http://www.example.org/buidling-system#room_component_rad> <http://w3id.org/unified-engineering/sigma#accomplishes> <http://www.example.org/building-functions#process_mech_heat_exchange> .
+
+
 ###  http://www.example.org/building_unified#process_action_blinds
 :process_action_blinds rdf:type owl:NamedIndividual ,
                                 <http://w3id.org/unified-engineering/sigma#ProcessAction> ;

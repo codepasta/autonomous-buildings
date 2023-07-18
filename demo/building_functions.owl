@@ -9,6 +9,7 @@
      xmlns:sigma="http://w3id.org/unified-engineering/sigma#">
     <owl:Ontology rdf:about="http://www.example.org/building-functions">
         <owl:imports rdf:resource="http://w3id.org/unified-engineering/sigma"/>
+        <owl:imports rdf:resource="http://w3id.org/unified-engineering/building/processes"/>
     </owl:Ontology>
     
 
@@ -134,6 +135,7 @@
     <!-- http://www.example.org/building-functions#process_cooling -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_cooling">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#CoolingProcess"/>
         <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Process"/>
         <sigma:hasMechanism rdf:resource="http://www.example.org/building-functions#process_mech_heat_exchange"/>
     </owl:NamedIndividual>
@@ -152,6 +154,7 @@
     <!-- http://www.example.org/building-functions#process_heating -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_heating">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#HeatingProcess"/>
         <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Process"/>
         <sigma:hasMechanism rdf:resource="http://www.example.org/building-functions#process_mech_heat_exchange"/>
     </owl:NamedIndividual>
@@ -161,6 +164,7 @@
     <!-- http://www.example.org/building-functions#process_light_emission -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_light_emission">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#Illumination"/>
         <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Process"/>
     </owl:NamedIndividual>
     
@@ -177,6 +181,7 @@
     <!-- http://www.example.org/building-functions#process_mech_air_movement -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_mech_air_movement">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#Pressurization"/>
         <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessMechanism"/>
         <sigma:hasDependentVariable rdf:resource="http://www.example.org/building-functions#process_var_co2_level"/>
         <sigma:hasIndependentVariable rdf:resource="http://www.example.org/building-functions#process_var_fresh_air_intake"/>
@@ -187,6 +192,7 @@
     <!-- http://www.example.org/building-functions#process_mech_heat_exchange -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_mech_heat_exchange">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#RadiativeExchange"/>
         <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#ProcessMechanism"/>
         <sigma:energyFlowsTo rdf:resource="http://www.example.org/building-functions#process_ctx_air"/>
         <sigma:hasDependentVariable rdf:resource="http://www.example.org/building-functions#process_var_temperature"/>
@@ -270,6 +276,7 @@
     <!-- http://www.example.org/building-functions#process_ventilation -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_ventilation">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#MassTransferProcess"/>
         <rdf:type rdf:resource="http://w3id.org/unified-engineering/sigma#Process"/>
     </owl:NamedIndividual>
     
