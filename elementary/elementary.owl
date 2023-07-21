@@ -21,9 +21,33 @@
     
 
 
+    <!-- http://www.w3id.org/elementary#affectedUpstreamVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#affectedUpstreamVariable">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.w3id.org/elementary#affects -->
 
     <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#affects"/>
+    
+
+
+    <!-- http://www.w3id.org/elementary#dealsWithStuff -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#dealsWithStuff">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3id.org/elementary#ConnectionPoint"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/elementary#ProcessVariable"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3id.org/elementary#PhysicalStuff"/>
+    </owl:ObjectProperty>
     
 
 
@@ -41,33 +65,75 @@
     
 
 
+    <!-- http://www.w3id.org/elementary#fedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#fedBy">
+        <owl:inverseOf rdf:resource="http://www.w3id.org/elementary#feeds"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#feeds -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#feeds"/>
+    
+
+
     <!-- http://www.w3id.org/elementary#hasCausationAction -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasCausationAction"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasCausationAction">
+        <rdfs:domain rdf:resource="http://www.w3id.org/elementary#ConnectionPoint"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/elementary#ProcessAction"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.w3id.org/elementary#hasComponentAction -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasComponentAction"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasComponentAction">
+        <rdfs:domain rdf:resource="http://www.w3id.org/elementary#Component"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/elementary#ComponentAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasConnectionPoint -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasConnectionPoint">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasStereotype"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasConnectionPoint"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.w3id.org/elementary#hasControlInput -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasControlInput"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasControlInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#hasConnectionPoint"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.w3id.org/elementary#hasControlOutput -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasControlOutput"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasControlOutput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#hasConnectionPoint"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.w3id.org/elementary#hasDependentVariable -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasDependentVariable"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasDependentVariable">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#hasVariable"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasStereotype"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasPhysicalMechanism"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasDependentVariable"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
@@ -85,13 +151,22 @@
 
     <!-- http://www.w3id.org/elementary#hasIndependentVariable -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasIndependentVariable"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasIndependentVariable">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#hasVariable"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasStereotype"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasPhysicalMechanism"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasIndependentVariable"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.w3id.org/elementary#hasInputEnergy -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasInputEnergy"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasInputEnergy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#dealsWithStuff"/>
+    </owl:ObjectProperty>
     
 
 
@@ -99,36 +174,53 @@
 
     <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasManipulatedVariable">
         <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#hasIndependentVariable"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasStereotype"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasPhysicalMechanism"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasManipulatedVariable"/>
+        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
 
     <!-- http://www.w3id.org/elementary#hasObservedVariable -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasObservedVariable"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasObservedVariable">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#isRelatedToVariable"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.w3id.org/elementary#hasOutputEnergy -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasOutputEnergy"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasOutputEnergy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#dealsWithStuff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasPart">
+        <owl:inverseOf rdf:resource="http://www.w3id.org/elementary#hasPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasPhysicalMechanism -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasPhysicalMechanism">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasStereotype"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasPhysicalMechanism"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.w3id.org/elementary#hasProcessAction -->
 
     <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasProcessAction"/>
-    
-
-
-    <!-- http://www.w3id.org/elementary#hasProcessMechanism -->
-
-    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasProcessMechanism">
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasStereotype"/>
-            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasProcessMechanism"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
     
 
 
@@ -158,7 +250,21 @@
 
     <!-- http://www.w3id.org/elementary#hasSubstance -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasSubstance"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasSubstance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#dealsWithStuff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#hasVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#hasVariable">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasStereotype"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasPhysicalMechanism"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasVariable"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
@@ -167,6 +273,12 @@
     <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#increases">
         <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#modulates"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/elementary#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#isPartOf"/>
     
 
 
@@ -188,6 +300,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#manipulates">
         <owl:equivalentProperty rdf:resource="http://www.w3id.org/elementary#modulates"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#isRelatedToVariable"/>
     </owl:ObjectProperty>
     
 
@@ -210,7 +323,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#modulates">
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasProcessMechanism"/>
+            <rdf:Description rdf:about="http://www.w3id.org/elementary#hasPhysicalMechanism"/>
             <rdf:Description rdf:about="http://www.w3id.org/elementary#hasDependentVariable"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -315,7 +428,7 @@
     <!-- http://www.w3id.org/elementary#EnergyConversion -->
 
     <owl:Class rdf:about="http://www.w3id.org/elementary#EnergyConversion">
-        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ProcessMechanism"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
     </owl:Class>
     
 
@@ -331,7 +444,7 @@
     <!-- http://www.w3id.org/elementary#EnergyTransfer -->
 
     <owl:Class rdf:about="http://www.w3id.org/elementary#EnergyTransfer">
-        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ProcessMechanism"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
     </owl:Class>
     
 
@@ -355,7 +468,7 @@
     <!-- http://www.w3id.org/elementary#ForceTransfer -->
 
     <owl:Class rdf:about="http://www.w3id.org/elementary#ForceTransfer">
-        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ProcessMechanism"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
     </owl:Class>
     
 
@@ -371,7 +484,7 @@
     <!-- http://www.w3id.org/elementary#MassTransfer -->
 
     <owl:Class rdf:about="http://www.w3id.org/elementary#MassTransfer">
-        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#ProcessMechanism"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
     </owl:Class>
     
 
@@ -408,6 +521,14 @@
     
 
 
+    <!-- http://www.w3id.org/elementary#PhysicalMechanism -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#PhysicalMechanism">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.w3id.org/elementary#PhysicalProcessConcept -->
 
     <owl:Class rdf:about="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
@@ -425,14 +546,6 @@
     <!-- http://www.w3id.org/elementary#ProcessAction -->
 
     <owl:Class rdf:about="http://www.w3id.org/elementary#ProcessAction">
-        <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3id.org/elementary#ProcessMechanism -->
-
-    <owl:Class rdf:about="http://www.w3id.org/elementary#ProcessMechanism">
         <rdfs:subClassOf rdf:resource="http://www.w3id.org/elementary#PhysicalProcessConcept"/>
     </owl:Class>
     

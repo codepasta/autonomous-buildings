@@ -36,81 +36,13 @@
     
 
 
-    <!-- http://www.w3id.org/elementary/applications/hvac#midstream -->
-
-    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#midstream"/>
-    
-
-
-    <!-- http://www.w3id.org/elementary/applications/hvac#stype_centrifugal-fan -->
-
-    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_centrifugal-fan"/>
-    
-
-
-    <!-- http://www.w3id.org/elementary/applications/hvac#stype_damper -->
-
-    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_damper"/>
-    
-
-
-    <!-- http://www.w3id.org/elementary/applications/hvac#stype_filter -->
-
-    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_filter"/>
-    
-
-
-    <!-- http://www.w3id.org/elementary/applications/hvac#stype_forced-flow-heat-exchanger -->
-
-    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_forced-flow-heat-exchanger"/>
-    
-
-
-    <!-- http://www.w3id.org/elementary/applications/hvac#stype_mechanical_actuator -->
-
-    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_mechanical_actuator"/>
-    
-
-
-    <!-- http://www.w3id.org/elementary/applications/hvac#stype_valve -->
-
-    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_valve"/>
-    
-
-
-    <!-- http://www.w3id.org/elementary/applications/hvac#supply -->
-
-    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#supply"/>
-    
-
-
     <!-- http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section -->
 
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
         <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessPathway"/>
-        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section_end"/>
-        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section_start"/>
         <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#midstream"/>
         <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#supply"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section_end -->
-
-    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section_end">
-        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
-        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#conditioned_space"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section_start -->
-
-    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section_start">
-        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
-        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_damper"/>
     </owl:NamedIndividual>
     
 
@@ -127,8 +59,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#damper_actuator">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Actuator"/>
-        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_damper"/>
-        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_mechanical_actuator"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#mechanical_actuator"/>
+        <Brick:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_damper"/>
     </owl:NamedIndividual>
     
 
@@ -137,10 +69,10 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#fresh-air-handling-unit">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#SubSystem"/>
-        <elementary:hasPart rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil"/>
-        <elementary:hasPart rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_damper"/>
-        <elementary:hasPart rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_filter"/>
-        <elementary:hasPart rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#supply_fan"/>
+        <Brick:hasPart rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil"/>
+        <Brick:hasPart rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_damper"/>
+        <Brick:hasPart rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_filter"/>
+        <Brick:hasPart rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#supply_fan"/>
     </owl:NamedIndividual>
     
 
@@ -150,10 +82,13 @@
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
         <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Heating_Coil"/>
-        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#supply_fan"/>
-        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_forced-flow-heat-exchanger"/>
-        <elementary:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section"/>
-        <elementary:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_circuit"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#heat_exchanger"/>
+        <Brick:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#supply_fan"/>
+        <Brick:feedsAir rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#supply_fan"/>
+        <Brick:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section"/>
+        <Brick:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_circuit"/>
+        <Brick:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_return_path"/>
+        <Brick:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_supply_path"/>
     </owl:NamedIndividual>
     
 
@@ -163,9 +98,9 @@
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil_valve">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
         <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Heating_Valve"/>
-        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil"/>
-        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_valve"/>
-        <elementary:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_circuit"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#valve"/>
+        <Brick:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil"/>
+        <Brick:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_supply_path"/>
     </owl:NamedIndividual>
     
 
@@ -174,8 +109,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil_valve_actuator">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Actuator"/>
-        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil_valve"/>
-        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_mechanical_actuator"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#mechanical_actuator"/>
+        <Brick:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil_valve"/>
     </owl:NamedIndividual>
     
 
@@ -185,6 +120,26 @@
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_circuit">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
         <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessPathway"/>
+        <Brick:hasPart rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_return_path"/>
+        <Brick:hasPart rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_supply_path"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_return_path -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_return_path">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#return"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_supply_path -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#hot_water_supply_path">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#supply"/>
     </owl:NamedIndividual>
     
 
@@ -194,9 +149,10 @@
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#oa_damper">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
         <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Damper"/>
-        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_filter"/>
-        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_damper"/>
-        <elementary:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#damper"/>
+        <Brick:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_filter"/>
+        <Brick:feedsAir rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_filter"/>
+        <Brick:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section"/>
     </owl:NamedIndividual>
     
 
@@ -206,8 +162,8 @@
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#oa_damper_actuator">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Actuator"/>
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
-        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_damper"/>
-        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_mechanical_actuator"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#mechanical_actuator"/>
+        <Brick:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#oa_damper"/>
     </owl:NamedIndividual>
     
 
@@ -217,9 +173,10 @@
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#oa_filter">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
         <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Filter"/>
-        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil"/>
-        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_filter"/>
-        <elementary:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#filter"/>
+        <Brick:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil"/>
+        <Brick:feedsAir rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil"/>
+        <Brick:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section"/>
     </owl:NamedIndividual>
     
 
@@ -229,9 +186,9 @@
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#supply_fan">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
         <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Fan"/>
-        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#conditioned_space"/>
-        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_centrifugal-fan"/>
-        <elementary:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#fan"/>
+        <Brick:feedsAir rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#conditioned_space"/>
+        <Brick:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section"/>
     </owl:NamedIndividual>
     
 
