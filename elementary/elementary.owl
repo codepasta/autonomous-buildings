@@ -389,6 +389,14 @@
     
 
 
+    <!-- http://www.w3id.org/elementary#suitableFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/elementary#suitableFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/elementary#hasStreamKind"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
