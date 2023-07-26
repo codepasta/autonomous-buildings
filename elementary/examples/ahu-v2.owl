@@ -117,7 +117,9 @@
     <!-- http://www.w3id.org/elementary/applications/hvac/ahu#conditioned_space -->
 
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#conditioned_space">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
         <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Space"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_conditioned_space"/>
     </owl:NamedIndividual>
     
 
@@ -216,6 +218,7 @@
     <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#oa_filter">
         <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
         <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Filter"/>
+        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil"/>
         <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_filter"/>
         <elementary:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_supply_section"/>
     </owl:NamedIndividual>
