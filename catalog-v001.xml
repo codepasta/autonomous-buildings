@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.example.org/boiler-01-td#" uri="boiler-01-td.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.example.org/boiler-controller#" uri="boiler-control-model.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3id.org/PhyDiT" uri="phydit.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="https://www.w3.org/2019/wot/td" uri="external-engineering-ontologies/td.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://brickschema.org/schema/1.3/Brick" uri="external-engineering-ontologies/Brick.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.example.org/boiler-system#" uri="boiler-system-model.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.example.org/boiler-process#" uri="boiler-process-model.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="http://w3id.org/unified-engineering/building/processes" uri="bridging-ontology/demo/ontologies/building-processes.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="http://www.example.org/automation-strategies" uri="bridging-ontology/demo/automation_strategy_heating.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="http://www.example.org/building_functions" uri="bridging-ontology/demo/building_functions.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="duplicate:http://www.semanticweb.org/artur/ontologies/2014/10/untitled-ontology-343" uri="mas-ontologies/OntoMAS/Example%20of%20OntologyMAS%20Model%20Instantiated.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="duplicate:http://www.semanticweb.org/artur/ontologies/2014/10/untitled-ontology-343" uri="mas-ontologies/OntoMAS/OntoMAS%20Resource.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="duplicate:http://www.w3.org/2002/07/owl" uri="mas-ontologies/moise.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="duplicate:http://www.w3.org/2002/07/owl" uri="mas-ontologies/moise_entity.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="duplicate:http://www.w3.org/2002/07/owl" uri="mas-ontologies/moise_functional.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="duplicate:http://www.w3.org/2002/07/owl" uri="mas-ontologies/moise_normative.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="duplicate:http://www.w3.org/2002/07/owl" uri="mas-ontologies/moise_structural.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="http://www.w3id.org/elementary" uri="archive/elementary/elementary.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="duplicate:http://www.w3id.org/elementary/applications/hvac/ahu" uri="archive/elementary/examples/ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="duplicate:http://www.w3id.org/elementary/applications/hvac/ahu" uri="archive/elementary/examples/erahu-ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="duplicate:http://www.w3id.org/elementary/applications/hvac/ahu" uri="archive/elementary/examples/rahu-ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="http://www.w3id.org/elementary/applications/hvac/pfahu" uri="archive/elementary/examples/pfahu-ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="http://www.w3id.org/elmentary/applications/hvac" uri="archive/elementary/examples/hvac-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="https://w3id.org/tso" uri="process-model/process-model-tso/tubes.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:http://w3id.org/unified-engineering/building/processes" uri="process-model/building-processes.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:http://www.w3id.org/elementary" uri="component-stereotypes/elementary.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:http://www.w3id.org/elementary/applications/hvac/ahu" uri="archive/elementary/examples/temp/ahu.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:http://www.w3id.org/elementary/applications/hvac/ahu" uri="component-stereotypes/examples/ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:http://www.w3id.org/elementary/applications/hvac/ahu" uri="component-stereotypes/examples/erahu-ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:http://www.w3id.org/elementary/applications/hvac/ahu" uri="component-stereotypes/examples/rahu-ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:http://www.w3id.org/elementary/applications/hvac/ahu" uri="component-stereotypes/examples/temp/ahu.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:http://www.w3id.org/elementary/applications/hvac/pfahu" uri="component-stereotypes/examples/pfahu-ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:http://www.w3id.org/elmentary/applications/hvac" uri="archive/elementary/examples/temp/hvac.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:http://www.w3id.org/elmentary/applications/hvac" uri="component-stereotypes/examples/hvac-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:http://www.w3id.org/elmentary/applications/hvac" uri="component-stereotypes/examples/temp/hvac.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:https://w3id.org/tso" uri="archive/elementary/underlying-ontologies/tubes.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1709130361948" name="shadowed:https://w3id.org/tso" uri="component-stereotypes/underlying-ontologies/tubes.owl"/>
+    </group>
+</catalog>

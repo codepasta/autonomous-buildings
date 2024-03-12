@@ -1,0 +1,444 @@
+@prefix : <http://w3id.org/unified-engineering/ekaa#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://w3id.org/unified-engineering/ekaa> .
+
+<http://w3id.org/unified-engineering/ekaa> rdf:type owl:Ontology ;
+                                            rdfs:comment "An ontology to provide autonomous software agents with a unified view of engineering system description." ;
+                                            owl:versionInfo "1.2.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://w3id.org/unified-engineering/ekaa#accomplishedBy
+:accomplishedBy rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#accomplishes
+:accomplishes rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#achievedBy
+:achievedBy rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#actuates
+:actuates rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#addresses
+:addresses rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#affectedVariable
+:affectedVariable rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#affects
+:affects rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#affectsVariable
+:affectsVariable rdf:type owl:ObjectProperty ;
+                 rdfs:domain :ProcessAction ;
+                 rdfs:range :ProcessVariable .
+
+
+###  http://w3id.org/unified-engineering/ekaa#carriesOut
+:carriesOut rdf:type owl:ObjectProperty ;
+            rdfs:domain :ProcessRole ;
+            rdfs:range :Intent .
+
+
+###  http://w3id.org/unified-engineering/ekaa#concerns
+:concerns rdf:type owl:ObjectProperty ;
+          rdfs:domain :Requirement ;
+          rdfs:range :SystemContext .
+
+
+###  http://w3id.org/unified-engineering/ekaa#energyFlowsFrom
+:energyFlowsFrom rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :flowsFrom .
+
+
+###  http://w3id.org/unified-engineering/ekaa#energyFlowsTo
+:energyFlowsTo rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :flowsTo .
+
+
+###  http://w3id.org/unified-engineering/ekaa#flowsFrom
+:flowsFrom rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#flowsTo
+:flowsTo rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#fulfills
+:fulfills rdf:type owl:ObjectProperty ;
+          rdfs:domain :System .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasAction
+:hasAction rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasComponent
+:hasComponent rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasPart ;
+              rdfs:domain :Component ,
+                          :System ;
+              rdfs:range :Component .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasCondition
+:hasCondition rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasDependentVariable
+:hasDependentVariable rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasVariable .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasDesiredState
+:hasDesiredState rdf:type owl:ObjectProperty ;
+                 rdfs:domain :AutomationProgram ,
+                             :Intent ;
+                 rdfs:range :GoalState .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasGoal
+:hasGoal rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isGoalOf ;
+         rdfs:domain :Intent ;
+         rdfs:range :GoalState .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasIndependentVariable
+:hasIndependentVariable rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :hasVariable .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasInput
+:hasInput rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasInterface .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasIntent
+:hasIntent rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasInterface
+:hasInterface rdf:type owl:ObjectProperty ;
+              rdfs:domain :AutomationProgram .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasMechanism
+:hasMechanism rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasOutput
+:hasOutput rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasInterface .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasParameter
+:hasParameter rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasInterface .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasPart
+:hasPart rdf:type owl:ObjectProperty ,
+                  owl:TransitiveProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasPostcondition
+:hasPostcondition rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasCondition .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasPrecondition
+:hasPrecondition rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasCondition .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasQuantity
+:hasQuantity rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasStuff
+:hasStuff rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasSubProcess
+:hasSubProcess rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasSubsystem
+:hasSubsystem rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasPart ;
+              rdfs:domain :Subsystem ,
+                          :System ;
+              rdfs:range :Subsystem .
+
+
+###  http://w3id.org/unified-engineering/ekaa#hasVariable
+:hasVariable rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#involvedIn
+:involvedIn rdf:type owl:ObjectProperty ;
+            owl:propertyChainAxiom ( :hasPart
+                                     :accomplishes
+                                   ) .
+
+
+###  http://w3id.org/unified-engineering/ekaa#isGoalOf
+:isGoalOf rdf:type owl:ObjectProperty ;
+          rdfs:domain :Goal ;
+          rdfs:range :Intent .
+
+
+###  http://w3id.org/unified-engineering/ekaa#isSuitableFor
+:isSuitableFor rdf:type owl:ObjectProperty ;
+               rdfs:domain :AutomationProgram ;
+               rdfs:range :ProcessRole .
+
+
+###  http://w3id.org/unified-engineering/ekaa#leadsTo
+:leadsTo rdf:type owl:ObjectProperty ;
+         rdfs:domain :ProcessAction ;
+         rdfs:range :GoalState .
+
+
+###  http://w3id.org/unified-engineering/ekaa#massFlowsFrom
+:massFlowsFrom rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :flowsFrom .
+
+
+###  http://w3id.org/unified-engineering/ekaa#massFlowsTo
+:massFlowsTo rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :flowsTo .
+
+
+###  http://w3id.org/unified-engineering/ekaa#measures
+:measures rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#modeledBy
+:modeledBy rdf:type owl:ObjectProperty ;
+           owl:inverseOf :models .
+
+
+###  http://w3id.org/unified-engineering/ekaa#models
+:models rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#partOf
+:partOf rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#refersToVariable
+:refersToVariable rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#relatedTo
+:relatedTo rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#relevantIn
+:relevantIn rdf:type owl:ObjectProperty ;
+            rdfs:domain :ProcessRole ;
+            rdfs:range :AffectedEnvironment .
+
+
+###  http://w3id.org/unified-engineering/ekaa#serves
+:serves rdf:type owl:ObjectProperty ;
+        rdfs:domain :System ;
+        rdfs:range :SystemContext .
+
+
+###  http://w3id.org/unified-engineering/ekaa#suitableFor
+:suitableFor rdf:type owl:ObjectProperty ;
+             rdfs:domain :AutomationStrategy ;
+             rdfs:range :ProcessRole .
+
+
+###  http://w3id.org/unified-engineering/ekaa#usesComponentAction
+:usesComponentAction rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#utilizedBy
+:utilizedBy rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/ekaa#utilizes
+:utilizes rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/unified-engineering/ekaa#Actuator
+:Actuator rdf:type owl:Class ;
+          rdfs:subClassOf :Component .
+
+
+###  http://w3id.org/unified-engineering/ekaa#AffectedEnvironment
+:AffectedEnvironment rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :ProcessContext
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :flowsTo ;
+                                                                  owl:someValuesFrom :SystemContext
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] .
+
+
+###  http://w3id.org/unified-engineering/ekaa#Application
+:Application rdf:type owl:Class ;
+             rdfs:subClassOf :AutomationDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#AutomationDescription
+:AutomationDescription rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/ekaa#AutomationProgram
+:AutomationProgram rdf:type owl:Class ;
+                   rdfs:subClassOf :AutomationStrategy .
+
+
+###  http://w3id.org/unified-engineering/ekaa#AutomationStrategy
+:AutomationStrategy rdf:type owl:Class ;
+                    rdfs:subClassOf :AutomationDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#BridgingConcept
+:BridgingConcept rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/ekaa#Component
+:Component rdf:type owl:Class ;
+           rdfs:subClassOf :DesignDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#ComponentAction
+:ComponentAction rdf:type owl:Class ;
+                 rdfs:subClassOf :DesignDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#Condition
+:Condition rdf:type owl:Class ;
+           rdfs:subClassOf :RequirementsDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#Delegation
+:Delegation rdf:type owl:Class ;
+            rdfs:subClassOf :RequirementsDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#DesignDescription
+:DesignDescription rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/ekaa#FunctionalRequirement
+:FunctionalRequirement rdf:type owl:Class ;
+                       rdfs:subClassOf :Requirement .
+
+
+###  http://w3id.org/unified-engineering/ekaa#Goal
+:Goal rdf:type owl:Class ;
+      rdfs:subClassOf :RequirementsDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#GoalState
+:GoalState rdf:type owl:Class ;
+           rdfs:subClassOf :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#Intent
+:Intent rdf:type owl:Class ;
+        rdfs:subClassOf :BridgingConcept .
+
+
+###  http://w3id.org/unified-engineering/ekaa#Operation
+:Operation rdf:type owl:Class ;
+           rdfs:subClassOf :RequirementsDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#Process
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#ProcessAction
+:ProcessAction rdf:type owl:Class ;
+               rdfs:subClassOf :BridgingConcept .
+
+
+###  http://w3id.org/unified-engineering/ekaa#ProcessContext
+:ProcessContext rdf:type owl:Class ;
+                rdfs:subClassOf :BridgingConcept ,
+                                :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#ProcessDescription
+:ProcessDescription rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/ekaa#ProcessMechanism
+:ProcessMechanism rdf:type owl:Class ;
+                  rdfs:subClassOf :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#ProcessModel
+:ProcessModel rdf:type owl:Class ;
+              rdfs:subClassOf :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#ProcessRole
+:ProcessRole rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/ekaa#ProcessVariable
+:ProcessVariable rdf:type owl:Class ;
+                 rdfs:subClassOf :ProcessDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#Requirement
+:Requirement rdf:type owl:Class ;
+             rdfs:subClassOf :RequirementsDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#RequirementsDescription
+:RequirementsDescription rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/ekaa#Sensor
+:Sensor rdf:type owl:Class ;
+        rdfs:subClassOf :Component .
+
+
+###  http://w3id.org/unified-engineering/ekaa#Subsystem
+:Subsystem rdf:type owl:Class ;
+           rdfs:subClassOf :DesignDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#System
+:System rdf:type owl:Class ;
+        rdfs:subClassOf :DesignDescription .
+
+
+###  http://w3id.org/unified-engineering/ekaa#SystemContext
+:SystemContext rdf:type owl:Class ;
+               rdfs:subClassOf :DesignDescription .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

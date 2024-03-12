@@ -1,0 +1,183 @@
+Supplementary Material for Evaluation of the Elementary Ontology
+----------------------------------------------------------------
+
+The Ontology
+------------
+
+The ontology can be referred to or downloaded here: http://w3id.org/elementary
+
+The ontology bridges to Brick, TSO, and OntoCape which are required if SPARQL queries refer to the classes and relationship contained in these.
+
+
+Example Ontology of HVAC Stereotypes
+------------------------------------
+
+Component stereotypes for common HVAC components (for e.g., corresponding to brick:HVAC_Equipment) can be found here.
+They can be referred to by components in a system description https://raw.githubusercontent.com/codepasta/autonomous-buildings/main/elementary/examples/hvac-v2.owl
+
+
+Sample Systems for Evaluation (Modeled Using Brick)
+--------------------------------------------------
+
+System Kind 1: A simple fresh-air handling unit :
+https://raw.githubusercontent.com/codepasta/autonomous-buildings/main/elementary/examples/ahu-v2.owl
+
+
+System Kind 2: A recirculated-air handling unit:
+https://raw.githubusercontent.com/codepasta/autonomous-buildings/main/elementary/examples/rahu-ahu-v2.owl
+
+System Kind 3: Heat-wheel Energy Recovery FAHU:
+https://raw.githubusercontent.com/codepasta/autonomous-buildings/main/elementary/examples/erahu-ahu-v2.owl
+
+
+System Kind 4: Fresh-air AHU With Parallel Fans :
+https://raw.githubusercontent.com/codepasta/autonomous-buildings/main/elementary/examples/pfahu-ahu-v2.owl
+
+
+SPARQL Queries
+--------------
+
+1. Use Case - 1: Find the connection point of a component stereotype which manipulates a process variable and dependent variable which will be affected:
+
+PREFIX elem: <http://www.w3id.org/elementary#>
+SELECT * WHERE {
+    ?cs a elem:Stereotype.
+    ?cs elem:hasPhysicalMechanism ?m.
+    ?m elem:hasDependentVariable ?dv.
+    ?m elem:hasManipulatedVariable ?mv.
+    ?cs elem:hasConnectionPoint ?cp.
+    ?cp elem:manipulates ?mv.
+}
+
+
+2. Use Case - 2: Between two components that are linked using a generic "feeds" relationship, find the process dependency:
+
+The following query matches the connection port and the variable dependency.
+For SK1 (FAHU), the two downstream dependencies would be damper->filter (air flow), and valve->heating coil (water flow)
+
+PREFIX elem: <http://www.w3id.org/elementary#>
+PREFIX hvac: <http://www.w3id.org/elementary/applications/hvac#>
+PREFIX brick: <https://brickschema.org/schema/Brick#>
+PREFIX ahu: <http://www.w3id.org/elementary/applications/hvac/ahu#>
+SELECT * WHERE {
+
+    ?c1 a elem:Component.
+    ?c2 a elem:Component.
+    ?c1 elem:feeds ?c2.
+    ?c1 elem:hasMechanism ?m1.
+    ?c2 elem:hasMechanism ?m2.
+    
+    ?c1 elem:hasConnectionPoint ?c1p.
+    ?c1p a elem:OutletConnectionPoint.
+    ?c2 elem:hasConnectionPoint ?c2p.
+    ?c2p a elem:InletConnectionPoint.
+    ?c1p elem:dealsWithStuff ?stuff.
+    ?c2p elem:dealsWithStuff ?stuff.
+    ?c1p elem:suitableFor ?streamKind.
+    ?c2p elem:suitableFor ?streamKind.
+    
+    ?c1p elem:isRelatedToVariable ?c1pv.
+    ?c1 elem:hasDependentVariable ?c1pv.
+    
+    ?c2p elem:isRelatedToVariable ?c2pv.
+    ?c2 elem:hasIndependentVariable ?c2pv.
+    
+    ?c1pv elem:dealsWithStuff ?vstuff.
+    ?c1pv elem:hasQuantity ?vq.
+    ?c2pv elem:dealsWithStuff ?vstuff.
+    ?c2pv elem:hasQuantity ?vq.
+
+}
+
+3. Use Case - 3: Find components which influence a variable quantity at a give point in the stream.
+
+First we need to infer interactions between components:
+
+PREFIX elem: <http://www.w3id.org/elementary#>
+PREFIX brick: <https://brickschema.org/schema/Brick#>
+PREFIX ahu: <http://www.w3id.org/elementary/applications/hvac/ahu#>
+PREFIX hvac: <http://www.w3id.org/elementary/applications/hvac#>
+
+CONSTRUCT
+{
+    _:con a elem:Connection.
+    ?a elem:connectedThrough _:con.
+    ?b elem:connectedThrough _:con.
+	_:con elem:connectsSystemThrough ?ap.
+    _:con elem:connectsSystemThrough ?bp.
+    _:con elem:manipulates ?bpv.
+    ?a elem:affects ?b.
+	construct{?b elem:affects ?b}
+	where{?a elem:hasIndependentVariable ?aipv. ?b elem:affectedUpstreamVariable ?buv.}
+	?b elem:affects ?a.
+}
+WHERE {
+	?a elem:feeds ?b.
+    
+	?a elem:hasConnectionPoint ?ap.
+    ?ap a elem:OutletConnectionPoint.
+    ?ap elem:dealsWithStuff ?stuff.
+    ?ap elem:isRelatedToVariable ?apv.
+    ?a elem:hasDependentVariable ?apv.
+	
+    ?apv elem:hasQuantity ?quantity.
+    
+    ?b elem:hasConnectionPoint ?bp.
+    ?bp a elem:InletConnectionPoint.    
+    ?bp elem:dealsWithStuff ?stuff.
+    ?bp elem:isRelatedToVariable ?bpv.
+    ?b elem:hasIndependentVariable ?bpv.
+	
+	
+	BIND(?reveristrue, IF(?apiv == ?buv
+	
+    ?bpv elem:hasQuantity ?quantity.
+    
+    OPTIONAL {
+        ?skind a elem:StreamKind.
+     	?ap elem:intendedFor ?skind.
+        ?bp elem:intendedFor ?skind.
+    }
+}
+
+Based on this, a test point (TP) can be specified a context and then upstream and downstream components can be located transitively:
+
+PREFIX elem: <http://www.w3id.org/elementary#>
+PREFIX hvac: <http://www.w3id.org/elementary/applications/hvac#>
+PREFIX brick: <https://brickschema.org/schema/Brick#>
+PREFIX ahu: <http://www.w3id.org/elementary/applications/hvac/ahu#>
+SELECT ?c ?cup ?cdw WHERE {
+	#Where
+    BIND(ahu:conditioned_space as ?context).
+    #What
+    BIND(brick:Air as ?stuff).
+    BIND(brick:Temperature as ?quantity)
+    
+    #Find the first upstream component of the context which affects ?stuff ?quantity
+    ?c a elem:Component.
+    ?c elem:feeds? ?context.
+    ?c elem:hasDependentVariable ?dvar.
+    ?c elem:hasIndependentVariable ?ivar.
+    ?dvar elem:hasQuantity ?quantity.
+    ?dvar elem:dealsWithStuff ?stuff.
+    #For all such components find its upstream
+    #components that is linked via process variable
+    {
+    ?cup a elem:Component.
+    ?cup elem:feeds? ?c.
+    ?cup elem:hasDependentVariable ?ivar.}
+    #But it could also be downstream components
+    #which has effect upstream (like a fan), so
+    UNION
+    {
+    ?cdw a elem:Component.
+    ?c elem:feeds* ?cdw.
+    ?cdw elem:affectedUpstreamVariable ?ivar.
+    }
+} limit 100 
+
+How to get things running
+-------------------------
+The easiest way to try out the sparql queries is to load the datasets in a graph database which supports OWL-RL reasoning (basically: sub-class, sub-property, and property chains).
+
+The RAHU, ERAHU, and PFAHU use FAHU as basis because the supply stream is the same in all.

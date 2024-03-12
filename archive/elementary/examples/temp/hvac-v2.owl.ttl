@@ -1,0 +1,560 @@
+@prefix : <http://www.w3id.org/elmentary/applications/hvac#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tso: <https://w3id.org/tso#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix Brick: <https://brickschema.org/schema/Brick#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix bacnet: <http://data.ashrae.org/bacnet/2020#> .
+@prefix schema: <http://schema.org/> .
+@prefix elementary: <http://www.w3id.org/elementary#> .
+@base <http://www.w3id.org/elementary/applications/hvac> .
+
+<http://www.w3id.org/elementary/applications/hvac> rdf:type owl:Ontology ;
+                                                    owl:imports <http://www.w3id.org/elementary> ,
+                                                                <https://brickschema.org/schema/1.3/Brick> ,
+                                                                <https://w3id.org/v0.3/tubes> .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3id.org/elementary#InletConnectionPointConnectionPoint
+elementary:InletConnectionPointConnectionPoint rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.w3id.org/elementary#var_control_signal
+elementary:var_control_signal rdf:type owl:NamedIndividual ,
+                                       elementary:ProcessVariable .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#Opening_Ratio
+:Opening_Ratio rdf:type owl:NamedIndividual ,
+                        Brick:Quantity .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#action_change_damper_position
+:action_change_damper_position rdf:type owl:NamedIndividual ,
+                                        elementary:ComponentAction ;
+                               elementary:effectiveAt :cp_damper_actuation_input ;
+                               elementary:modulatedBy elementary:mechanical_force ;
+                               elementary:modulates :var_orifice_opening_ratio .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#action_change_fan_power_input
+:action_change_fan_power_input rdf:type owl:NamedIndividual ,
+                                        elementary:ComponentAction ;
+                               elementary:effectiveAt :cp_fan_shaft ;
+                               elementary:modulatedBy elementary:mechanical_energy .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#action_change_motor_power_output
+:action_change_motor_power_output rdf:type owl:NamedIndividual ,
+                                           elementary:ComponentAction ;
+                                  elementary:effectiveAt :cp_motor_shaft ;
+                                  elementary:modulatedBy elementary:electrical_energy .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#action_change_valve_position
+:action_change_valve_position rdf:type owl:NamedIndividual ,
+                                       elementary:ComponentAction ;
+                              elementary:effectiveAt :cp_valve_actuation_input ;
+                              elementary:modulatedBy elementary:mechanical_force .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#air-side
+:air-side rdf:type owl:NamedIndividual ,
+                   elementary:ProcessPathway ,
+                   elementary:Stereotype .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#contained
+:contained rdf:type owl:NamedIndividual ,
+                    elementary:ProcessPosition .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_actuation_signal_input
+:cp_actuation_signal_input rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_actuator_mechanical_output
+:cp_actuator_mechanical_output rdf:type owl:NamedIndividual ,
+                                        elementary:OutletConnectionPoint .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_acutuator_electrical_energy_input
+:cp_acutuator_electrical_energy_input rdf:type owl:NamedIndividual ,
+                                               elementary:InletConnectionPoint ;
+                                      elementary:hasObservedVariable :var_input_electrical_energy .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_damper_actuation_input
+:cp_damper_actuation_input rdf:type owl:NamedIndividual ,
+                                    elementary:ActuationConnectionPoint ;
+                           tso:hasInput elementary:mechanical_force .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_damper_air_inlet
+:cp_damper_air_inlet rdf:type owl:NamedIndividual ,
+                              elementary:InletConnectionPoint ;
+                     elementary:hasObservedVariable :var_air_inlet_pressure ;
+                     elementary:hasProcessPosition :inlet ;
+                     elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_damper_air_outlet
+:cp_damper_air_outlet rdf:type owl:NamedIndividual ,
+                               elementary:OutletConnectionPoint ;
+                      elementary:hasObservedVariable :var_air_flow_rate ;
+                      elementary:hasProcessPosition :outlet ;
+                      elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_drive_electrical_energy_input
+:cp_drive_electrical_energy_input rdf:type owl:NamedIndividual ,
+                                           elementary:InletConnectionPoint ;
+                                  elementary:hasObservedVariable elementary:electrical_energy ;
+                                  elementary:hasQuantity Brick:Voltage ;
+                                  elementary:hasQuantity <https://brickschema.org/schema/BrickTag#Current> ;
+                                  tso:hasInput elementary:electrical_energy .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_driveelecrical_energy_output
+:cp_driveelecrical_energy_output rdf:type owl:NamedIndividual ,
+                                          elementary:OutletConnectionPoint ;
+                                 elementary:hasObservedVariable elementary:electrical_energy ;
+                                 elementary:hasQuantity Brick:Voltage ;
+                                 elementary:hasQuantity <https://brickschema.org/schema/BrickTag#Current> ;
+                                 tso:hasOutput elementary:electrical_energy .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_fan_air_inlet
+:cp_fan_air_inlet rdf:type owl:NamedIndividual ,
+                           elementary:InletConnectionPoint ;
+                  elementary:hasObservedVariable :var_air_inlet_pressure ;
+                  elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_fan_air_outlet
+:cp_fan_air_outlet rdf:type owl:NamedIndividual ,
+                            elementary:OutletConnectionPoint ;
+                   elementary:hasObservedVariable :var_air_flow_rate ;
+                   elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_fan_shaft
+:cp_fan_shaft rdf:type owl:NamedIndividual ,
+                       elementary:InletConnectionPoint ;
+              elementary:modulates :var_angular_velocity ;
+              tso:hasInput elementary:mechanical_force .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_filter_air_inlet
+:cp_filter_air_inlet rdf:type owl:NamedIndividual ,
+                              elementary:InletConnectionPoint ;
+                     elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_filter_air_outlet
+:cp_filter_air_outlet rdf:type owl:NamedIndividual ,
+                               elementary:OutletConnectionPoint ;
+                      elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_air_inlet
+:cp_heat_exchanger_air_inlet rdf:type owl:NamedIndividual ,
+                                      elementary:InletConnectionPoint ;
+                             elementary:hasObservedVariable :var_air_flow_rate ,
+                                                            :var_air_inlet_temperature ;
+                             elementary:hasProcessPathway :air-side ;
+                             elementary:hasProcessPosition :inlet ;
+                             elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_air_outlet
+:cp_heat_exchanger_air_outlet rdf:type owl:NamedIndividual ,
+                                       elementary:OutletConnectionPoint ;
+                              elementary:hasObservedVariable :var_air_outlet_temperature ;
+                              elementary:hasProcessPathway :air-side ;
+                              elementary:hasProcessPosition :outlet ;
+                              elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_water_inlet
+:cp_heat_exchanger_water_inlet rdf:type owl:NamedIndividual ,
+                                        elementary:InletConnectionPoint ;
+                               elementary:hasObservedVariable :var_water_flow_rate ,
+                                                              :var_water_inlet_temperature ;
+                               elementary:hasProcessPathway :water-side ;
+                               elementary:hasProcessPosition :inlet ;
+                               elementary:hasSubstance Brick:Water .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_water_outlet
+:cp_heat_exchanger_water_outlet rdf:type owl:NamedIndividual ,
+                                         elementary:OutletConnectionPoint ;
+                                elementary:hasObservedVariable :var_water_outlet_temperature ;
+                                elementary:hasProcessPathway :water-side ;
+                                elementary:hasProcessPosition :outlet ;
+                                elementary:hasSubstance Brick:Water .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_motor_electrical_input
+:cp_motor_electrical_input rdf:type owl:NamedIndividual ,
+                                    elementary:InletConnectionPointConnectionPoint ;
+                           elementary:hasObservedVariable :var_input_electrical_energy ;
+                           tso:hasInput elementary:electrical_energy .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_motor_shaft
+:cp_motor_shaft rdf:type owl:NamedIndividual ,
+                         elementary:OutletConnectionPoint ;
+                elementary:hasObservedVariable :var_angular_velocity ;
+                tso:hasOutput elementary:mechanical_force .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_valve_actuation_input
+:cp_valve_actuation_input rdf:type owl:NamedIndividual ,
+                                   elementary:ActuationConnectionPoint ;
+                          elementary:hasObservedVariable :var_orifice_opening_ratio ;
+                          elementary:modulatedBy elementary:mechanical_force ;
+                          elementary:modulates :var_orifice_opening_ratio .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_valve_water_inlet
+:cp_valve_water_inlet rdf:type owl:NamedIndividual ,
+                               elementary:InletConnectionPoint ;
+                      elementary:hasObservedVariable :var_water_inlet_temperature ;
+                      elementary:hasSubstance Brick:Water .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#cp_valve_water_outlet
+:cp_valve_water_outlet rdf:type owl:NamedIndividual ,
+                                elementary:OutletConnectionPoint ;
+                       elementary:hasSubstance Brick:Water .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#downstream
+:downstream rdf:type owl:NamedIndividual ,
+                     elementary:ProcessPathway ,
+                     elementary:Stereotype .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#exhaust
+:exhaust rdf:type owl:NamedIndividual ,
+                  elementary:ProcessPathway ,
+                  elementary:Stereotype .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#extract
+:extract rdf:type owl:NamedIndividual ,
+                  elementary:ProcessPathway ,
+                  elementary:Stereotype .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#inlet
+:inlet rdf:type owl:NamedIndividual ,
+                elementary:ProcessPosition ;
+       owl:sameAs :intake .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#intake
+:intake rdf:type owl:NamedIndividual ,
+                 elementary:ProcessPosition .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#midstream
+:midstream rdf:type owl:NamedIndividual ,
+                    elementary:ProcessPathway ,
+                    elementary:Stereotype .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#outlet
+:outlet rdf:type owl:NamedIndividual ,
+                 elementary:ProcessPosition .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#pm_air_throttling
+:pm_air_throttling rdf:type owl:NamedIndividual ,
+                            elementary:ProcessMechanism ;
+                   elementary:hasDependentVariable :var_air_outlet_flow_rate ;
+                   elementary:hasIndependentVariable :var_air_inlet_pressure ;
+                   elementary:hasManipulatedVariable :var_orifice_opening_ratio .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#pm_centrifugal_pressurization
+:pm_centrifugal_pressurization rdf:type owl:NamedIndividual ,
+                                        elementary:ProcessMechanism ;
+                               elementary:hasDependentVariable :var_air_flow_rate ,
+                                                               :var_air_outlet_pressure ;
+                               elementary:hasIndependentVariable :var_air_inlet_pressure ,
+                                                                 :var_angular_velocity .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#pm_convective_heat_transfer
+:pm_convective_heat_transfer rdf:type owl:NamedIndividual ,
+                                      elementary:ProcessMechanism ;
+                             elementary:hasDependentVariable :var_air_outlet_temperature ;
+                             elementary:hasIndependentVariable :var_air_flow_rate ,
+                                                               :var_air_inlet_temperature ,
+                                                               :var_water_flow_rate ,
+                                                               :var_water_inlet_temperature ,
+                                                               :var_water_outlet_temperature .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#pm_electromotive_force_generation
+:pm_electromotive_force_generation rdf:type owl:NamedIndividual ,
+                                            elementary:ProcessMechanism ;
+                                   elementary:hasDependentVariable :var_shaft_power .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#pm_particulate_separation
+:pm_particulate_separation rdf:type owl:NamedIndividual ,
+                                    elementary:ProcessMechanism ;
+                           elementary:hasDependentVariable :var_air_outlet_particulate_measurement ;
+                           elementary:hasIndependentVariable :var_air_inlet_particulate_measurement .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#pm_water_throttling
+:pm_water_throttling rdf:type owl:NamedIndividual ,
+                              elementary:ProcessMechanism ;
+                     elementary:hasIndependentVariable :var_orifice_opening_ratio ,
+                                                       :var_water_inlet_pressure .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#return
+:return rdf:type owl:NamedIndividual ,
+                 elementary:ProcessPathway ,
+                 elementary:Stereotype .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#stype_bypass
+:stype_bypass rdf:type owl:NamedIndividual ,
+                       elementary:ProcessPathway ,
+                       elementary:Stereotype .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#stype_centrifugal-fan
+:stype_centrifugal-fan rdf:type owl:NamedIndividual ,
+                                elementary:Stereotype ;
+                       elementary:hasComponentAction :action_change_fan_power_input ;
+                       elementary:hasProcessMechanism :pm_centrifugal_pressurization ;
+                       tso:connectsAt :cp_fan_air_inlet ,
+                                      :cp_fan_air_outlet ,
+                                      :cp_fan_shaft .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#stype_damper
+:stype_damper rdf:type owl:NamedIndividual ,
+                       elementary:Stereotype ;
+              elementary:hasComponentAction :action_change_damper_position ;
+              elementary:hasProcessMechanism :pm_air_throttling ;
+              tso:connectsAt :cp_damper_actuation_input ,
+                             :cp_damper_air_inlet ,
+                             :cp_damper_air_outlet .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#stype_filter
+:stype_filter rdf:type owl:NamedIndividual ,
+                       elementary:Stereotype ;
+              elementary:hasProcessMechanism :pm_particulate_separation ;
+              tso:connectsAt :cp_filter_air_inlet ,
+                             :cp_filter_air_outlet .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#stype_forced-flow-heat-exchanger
+:stype_forced-flow-heat-exchanger rdf:type owl:NamedIndividual ,
+                                           elementary:Stereotype ;
+                                  elementary:hasProcessMechanism :pm_convective_heat_transfer ;
+                                  tso:connectsAt :cp_heat_exchanger_air_outlet ,
+                                                 :cp_heat_exchanger_water_inlet ,
+                                                 :cp_heat_exchanger_water_outlet .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#stype_mechanical_actuator
+:stype_mechanical_actuator rdf:type owl:NamedIndividual ,
+                                    elementary:Stereotype ;
+                           elementary:hasProcessMechanism :pm_electromotive_force_generation ;
+                           tso:connectsAt :cp_actuation_signal_input ,
+                                          :cp_actuator_mechanical_output ,
+                                          :cp_acutuator_electrical_energy_input .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#stype_motor
+:stype_motor rdf:type owl:NamedIndividual ,
+                      elementary:Stereotype ;
+             elementary:hasProcessMechanism :pm_electromotive_force_generation ;
+             tso:connectsAt :cp_motor_electrical_input ,
+                            :cp_motor_shaft .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#stype_valve
+:stype_valve rdf:type owl:NamedIndividual ,
+                      elementary:Stereotype ;
+             elementary:hasComponentAction :action_change_valve_position ;
+             elementary:hasProcessMechanism :pm_water_throttling ;
+             elementary:hasSubstance Brick:Water ;
+             tso:connectsAt :cp_valve_actuation_input ,
+                            :cp_valve_water_inlet ,
+                            :cp_valve_water_outlet .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#stype_variable_frequency_drive
+:stype_variable_frequency_drive rdf:type owl:NamedIndividual ,
+                                         elementary:Stereotype ;
+                                elementary:hasControlInput elementary:var_control_signal ;
+                                elementary:hasInputEnergy elementary:electrical_energy ;
+                                elementary:hasOutputEnergy elementary:electrical_energy .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#supply
+:supply rdf:type owl:NamedIndividual ,
+                 elementary:ProcessPathway ,
+                 elementary:Stereotype .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#upstream
+:upstream rdf:type owl:NamedIndividual ,
+                   elementary:ProcessPathway ,
+                   elementary:Stereotype .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate
+:var_air_flow_rate rdf:type owl:NamedIndividual ;
+                   elementary:hasProcessPosition :contained ;
+                   elementary:hasQuantity Brick:Flow ;
+                   elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_air_inlet_particulate_measurement
+:var_air_inlet_particulate_measurement rdf:type owl:NamedIndividual ,
+                                                elementary:ProcessVariable ;
+                                       elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_air_inlet_pressure
+:var_air_inlet_pressure rdf:type owl:NamedIndividual ,
+                                 elementary:ProcessVariable ;
+                        elementary:hasProcessPosition :inlet ;
+                        elementary:hasQuantity Brick:Pressure ;
+                        elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_air_inlet_temperature
+:var_air_inlet_temperature rdf:type owl:NamedIndividual ,
+                                    elementary:ProcessVariable ;
+                           elementary:hasProcessPosition :inlet ;
+                           elementary:hasQuantity Brick:Temperature ;
+                           elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_air_outlet_flow_rate
+:var_air_outlet_flow_rate rdf:type owl:NamedIndividual ,
+                                   elementary:ProcessVariable ;
+                          elementary:hasProcessPosition :outlet ;
+                          elementary:hasQuantity Brick:Flow ;
+                          elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_air_outlet_particulate_measurement
+:var_air_outlet_particulate_measurement rdf:type owl:NamedIndividual ,
+                                                 elementary:ProcessVariable ;
+                                        elementary:hasProcessPosition :outlet ;
+                                        elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_air_outlet_pressure
+:var_air_outlet_pressure rdf:type owl:NamedIndividual ,
+                                  elementary:ProcessVariable ;
+                         elementary:hasProcessPosition :outlet ;
+                         elementary:hasQuantity <http://qudt.org/vocab/quantitykind/Pressure> ;
+                         elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_air_outlet_temperature
+:var_air_outlet_temperature rdf:type owl:NamedIndividual ,
+                                     elementary:ProcessVariable ;
+                            elementary:hasProcessPosition :outlet ;
+                            elementary:hasQuantity Brick:Temperature ;
+                            elementary:hasSubstance Brick:Air .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_angular_velocity
+:var_angular_velocity rdf:type owl:NamedIndividual ,
+                               elementary:ProcessVariable ;
+                      elementary:hasQuantity Brick:Rotational_Speed .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_input_electrical_energy
+:var_input_electrical_energy rdf:type owl:NamedIndividual ,
+                                      elementary:ProcessVariable ;
+                             elementary:hasProcessPosition :inlet ;
+                             elementary:hasQuantity elementary:electrical_energy .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_orifice_opening_ratio
+:var_orifice_opening_ratio rdf:type owl:NamedIndividual ,
+                                    elementary:ProcessVariable ;
+                           elementary:hasQuantity :Opening_Ratio .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_shaft_power
+:var_shaft_power rdf:type owl:NamedIndividual ,
+                          elementary:ProcessVariable .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_shaft_torque
+:var_shaft_torque rdf:type owl:NamedIndividual ,
+                           elementary:ProcessVariable ;
+                  elementary:hasQuantity elementary:mechanical_force .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate
+:var_water_flow_rate rdf:type owl:NamedIndividual ,
+                              elementary:ProcessVariable ;
+                     elementary:hasProcessPosition :contained ;
+                     elementary:hasQuantity Brick:Flow ;
+                     elementary:hasSubstance Brick:Water .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_water_inlet_pressure
+:var_water_inlet_pressure rdf:type owl:NamedIndividual ,
+                                   elementary:ProcessVariable ;
+                          elementary:hasProcessPosition :inlet ;
+                          elementary:hasQuantity Brick:Pressure ;
+                          elementary:hasSubstance Brick:Water .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_water_inlet_temperature
+:var_water_inlet_temperature rdf:type owl:NamedIndividual ,
+                                      elementary:ProcessVariable ;
+                             elementary:hasProcessPosition :inlet ;
+                             elementary:hasQuantity Brick:Temperature ;
+                             elementary:hasSubstance Brick:Water .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#var_water_outlet_temperature
+:var_water_outlet_temperature rdf:type owl:NamedIndividual ,
+                                       elementary:ProcessVariable ;
+                              elementary:hasProcessPosition :outlet ;
+                              elementary:hasQuantity Brick:Temperature ;
+                              elementary:hasSubstance Brick:Water .
+
+
+###  http://www.w3id.org/elementary/applications/hvac#water-side
+:water-side rdf:type owl:NamedIndividual ,
+                     elementary:ProcessPathway ,
+                     elementary:Stereotype .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

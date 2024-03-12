@@ -1,0 +1,118 @@
+@prefix : <http://www.example.org/boiler-process#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/boiler-process#> .
+
+<http://www.example.org/boiler-process#> rdf:type owl:Ontology ;
+                                          owl:imports <http://www.w3id.org/elementary> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://qudt.org/vocab/quantitykind/VolumeFlowRate
+<http://qudt.org/vocab/quantitykind/VolumeFlowRate> rdf:type owl:NamedIndividual .
+
+
+###  http://qudt.org/vocab/unit/M3-PER-HR
+<http://qudt.org/vocab/unit/M3-PER-HR> rdf:type owl:NamedIndividual .
+
+
+###  http://www.example.org/boiler-process#pm_combustion
+:pm_combustion rdf:type owl:NamedIndividual ,
+                        <http://www.w3id.org/elementary#Combustion> ;
+               <http://www.w3id.org/elementary#hasDependentVariable> :pv_air_outflow_rate ,
+                                                                     :pv_combustion_energy_output ;
+               <http://www.w3id.org/elementary#hasIndependentVariable> :pv_air_inflow_rate ,
+                                                                       :pv_fuel_flow_rate .
+
+
+###  http://www.example.org/boiler-process#pm_heat_transfer
+:pm_heat_transfer rdf:type owl:NamedIndividual ,
+                           <http://www.w3id.org/elementary#HeatTransfer> ;
+                  <http://www.w3id.org/elementary#hasDependentVariable> :pv_water_outflow_temperature ;
+                  <http://www.w3id.org/elementary#hasIndependentVariable> :pv_heat_input ,
+                                                                          :pv_water_flow_rate ,
+                                                                          :pv_water_inflow_temperature .
+
+
+###  http://www.example.org/boiler-process#pv_air_inflow_rate
+:pv_air_inflow_rate rdf:type owl:NamedIndividual ,
+                             <http://www.w3id.org/elementary#ProcessVariable> ;
+                   <http://www.w3id.org/elementary#dealsWithStuff> <http://www.w3id.org/elementary#air> ;
+                   <http://www.w3id.org/elementary#hasProcessPosition> <http://www.w3id.org/elementary#inlet> ;
+                   <http://www.w3id.org/elementary#hasQuantityKind> <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+                   <http://www.w3id.org/elementary#hasUnits> <http://qudt.org/vocab/unit/M3-PER-HR> .
+
+
+###  http://www.example.org/boiler-process#pv_air_outflow_rate
+:pv_air_outflow_rate rdf:type owl:NamedIndividual ,
+                              <http://www.w3id.org/elementary#ProcessVariable> ;
+                   <http://www.w3id.org/elementary#dealsWithStuff> <http://www.w3id.org/elementary#air> ;
+                   <http://www.w3id.org/elementary#hasProcessPosition> <http://www.w3id.org/elementary#outlet> ;
+                   <http://www.w3id.org/elementary#hasQuantityKind> <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+                   <http://www.w3id.org/elementary#hasUnits> <http://qudt.org/vocab/unit/M3-PER-HR> .
+
+
+###  http://www.example.org/boiler-process#pv_combustion_energy_output
+:pv_combustion_energy_output rdf:type owl:NamedIndividual ,
+                                      <http://www.w3id.org/elementary#ProcessVariable> ;
+                   <http://www.w3id.org/elementary#dealsWithStuff> <http://www.w3id.org/elementary#thermal-energy> ;
+                   <http://www.w3id.org/elementary#hasProcessPosition> <http://www.w3id.org/elementary#outlet> ;
+                   <http://www.w3id.org/elementary#hasQuantityKind> <http://qudt.org/vocab/quantitykind/ThermalEnergy> ;
+                   <http://www.w3id.org/elementary#hasUnits> <http://qudt.org/vocab/unit/Joule> .
+
+
+###  http://www.example.org/boiler-process#pv_fuel_flow_rate
+:pv_fuel_flow_rate rdf:type owl:NamedIndividual ,
+                            <http://www.w3id.org/elementary#ProcessVariable> ;
+                   <http://www.w3id.org/elementary#dealsWithStuff> <http://www.w3id.org/elementary#fuel> ;
+                   <http://www.w3id.org/elementary#hasProcessPosition> <http://www.w3id.org/elementary#inlet> ;
+                   <http://www.w3id.org/elementary#hasQuantityKind> <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+                   <http://www.w3id.org/elementary#hasUnits> <http://qudt.org/vocab/unit/M3-PER-HR> .
+
+
+###  http://www.example.org/boiler-process#pv_heat_input
+:pv_heat_input rdf:type owl:NamedIndividual ,
+                        <http://www.w3id.org/elementary#ProcessVariable>;
+                                           <http://www.w3id.org/elementary#dealsWithStuff> <http://www.w3id.org/elementary#thermal-energy> ;
+                   <http://www.w3id.org/elementary#hasProcessPosition> <http://www.w3id.org/elementary#inlet> ;
+                   <http://www.w3id.org/elementary#hasQuantityKind> <http://qudt.org/vocab/quantitykind/ThermalEnergy> ;
+                   <http://www.w3id.org/elementary#hasUnits> <http://qudt.org/vocab/unit/Joule> .
+
+
+###  http://www.example.org/boiler-process#pv_water_flow_rate
+:pv_water_flow_rate rdf:type owl:NamedIndividual ,
+                             <http://www.w3id.org/elementary#ProcessVariable> ;
+                    <http://www.w3id.org/elementary#dealsWithStuff> <http://www.w3id.org/elementary#water> ;
+                   <http://www.w3id.org/elementary#hasProcessPosition> <http://www.w3id.org/elementary#inlet> ;
+                   <http://www.w3id.org/elementary#hasQuantityKind> <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+                   <http://www.w3id.org/elementary#hasUnits> <http://qudt.org/vocab/unit/M3-PER-HR> .
+
+
+###  http://www.example.org/boiler-process#pv_water_inflow_temperature
+:pv_water_inflow_temperature rdf:type owl:NamedIndividual ,
+                                      <http://www.w3id.org/elementary#ProcessVariable>;
+                   <http://www.w3id.org/elementary#dealsWithStuff> <http://www.w3id.org/elementary#water> ;
+                   <http://www.w3id.org/elementary#hasProcessPosition> <http://www.w3id.org/elementary#inlet> ;
+                   <http://www.w3id.org/elementary#hasQuantityKind> <http://qudt.org/vocab/quantitykind/Temperature> ;
+                   <http://www.w3id.org/elementary#hasUnits> <http://qudt.org/vocab/unit/DEG_C> .                                      
+
+
+###  http://www.example.org/boiler-process#pv_water_outflow_temperature
+:pv_water_outflow_temperature rdf:type owl:NamedIndividual ,
+                                       <http://www.w3id.org/elementary#ProcessVariable> ;
+                   <http://www.w3id.org/elementary#dealsWithStuff> <http://www.w3id.org/elementary#water> ;
+                   <http://www.w3id.org/elementary#hasProcessPosition> <http://www.w3id.org/elementary#outlet> ;
+                   <http://www.w3id.org/elementary#hasQuantityKind> <http://qudt.org/vocab/quantitykind/Temperature> ;
+                   <http://www.w3id.org/elementary#hasUnits> <http://qudt.org/vocab/unit/DEG_C> .                                         
+
+
+###  https://brickschema.org/schema/Brick#Flow
+<https://brickschema.org/schema/Brick#Flow> rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

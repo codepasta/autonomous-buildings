@@ -1,0 +1,1605 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3id.org/elmentary/applications/hvac#"
+     xml:base="http://www.w3id.org/elmentary/applications/hvac"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:tso="https://w3id.org/tso#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:qudt="http://qudt.org/schema/qudt/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:Brick="https://brickschema.org/schema/Brick#"
+     xmlns:shacl="http://www.w3.org/ns/shacl#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:bacnet="http://data.ashrae.org/bacnet/2020#"
+     xmlns:schema="http://schema.org/"
+     xmlns:elementary="http://www.w3id.org/elementary#">
+    <owl:Ontology rdf:about="http://www.w3id.org/elementary/applications/hvac">
+        <owl:imports rdf:resource="http://www.w3id.org/elementary"/>
+        <owl:imports rdf:resource="https://brickschema.org/schema/1.3/Brick"/>
+        <owl:imports rdf:resource="https://w3id.org/v0.3/tubes"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/elementary#InletConnectionPointConnectionPoint -->
+
+    <owl:Class rdf:about="http://www.w3id.org/elementary#InletConnectionPointConnectionPoint"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/elementary#var_control_signal -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary#var_control_signal">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#Opening_Ratio -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#Opening_Ratio">
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Quantity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#action_change_damper_position -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#action_change_damper_position">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ComponentAction"/>
+        <elementary:effectiveAt rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_damper_actuation_input"/>
+        <elementary:modulatedBy rdf:resource="http://www.w3id.org/elementary#mechanical_force"/>
+        <elementary:modulates rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_orifice_opening_ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#action_change_fan_power_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#action_change_fan_power_input">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ComponentAction"/>
+        <elementary:effectiveAt rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_fan_shaft"/>
+        <elementary:modulatedBy rdf:resource="http://www.w3id.org/elementary#mechanical_energy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#action_change_motor_power_output -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#action_change_motor_power_output">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ComponentAction"/>
+        <elementary:effectiveAt rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_motor_shaft"/>
+        <elementary:modulatedBy rdf:resource="http://www.w3id.org/elementary#electrical_energy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#action_change_valve_position -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#action_change_valve_position">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ComponentAction"/>
+        <elementary:effectiveAt rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_valve_actuation_input"/>
+        <elementary:modulatedBy rdf:resource="http://www.w3id.org/elementary#mechanical_force"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#air-side -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#air-side">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#StreamKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#bypass -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#bypass">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#StreamKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#contained -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#contained">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessPosition"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#outside-air-->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#outside-air">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessPosition"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_actuation_signal_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_actuation_signal_input">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary#var_control_signal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_actuator_electrical_energy_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_actuator_electrical_energy_input">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Electric_Energy"/>
+        <elementary:hasObservedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_input_electrical_energy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_actuator_mechanical_output -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_actuator_mechanical_output">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_boiler_electrical_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_boiler_electrical_input">
+        <rdf:type rdf:resource="https://w3id.org/tso#ConnectionPoint"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_electrical_power_input"/>
+        <rdfs:label>electrical-input</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_boiler_water_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_boiler_water_inlet">
+        <rdf:type rdf:resource="https://w3id.org/tso#ConnectionPoint"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_inlet_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_boiler_water_outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_boiler_water_outlet">
+        <rdf:type rdf:resource="https://w3id.org/tso#ConnectionPoint"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_outlet_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_damper_actuation_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_damper_actuation_input">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ActuationConnectionPoint"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_orifice_opening_ratio"/>
+        <tso:hasInput rdf:resource="http://www.w3id.org/elementary#mechanical_force"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_damper_air_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_damper_air_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_pressure"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_damper_air_outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_damper_air_outlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_drive_control_signal_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_drive_control_signal_input">
+        <rdf:type rdf:resource="https://w3id.org/tso#ConnectionPoint"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary#var_control_signal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_elecrical_power_output -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_elecrical_power_output">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
+        <elementary:hasObservedVariable rdf:resource="http://www.w3id.org/elementary#electrical_power"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Voltage"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/BrickTag#Current"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_electrical_power_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_electrical_power_input">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:hasObservedVariable rdf:resource="http://www.w3id.org/elementary#electrical_power"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Voltage"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/BrickTag#Current"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_fan_air_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_fan_air_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_pressure"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_fan_air_outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_fan_air_outlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_pressure"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_fan_shaft -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_fan_shaft">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_shaft_speed"/>
+        <tso:hasInput rdf:resource="http://www.w3id.org/elementary#mechanical_force"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_filter_air_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_filter_air_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_particulate_measurement"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_filter_air_outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_filter_air_outlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_particulate_measurement"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_a_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_a_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Fluid"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_inlet_temperature"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_through_flowrate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_a_outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_a_outlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Fluid"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_outlet_temperature"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_through_flowrate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_b_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_b_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Fluid"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_b_inlet_temperature"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_b_through_flowrate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_b_outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_b_outlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Fluid"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_b_outlet_temperature"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_b_through_flowrate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_air_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_air_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_temperature"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_air_outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_air_outlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_temperature"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_water_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_water_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_inlet_temperature"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#water-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_water_outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_water_outlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_outlet_temperature"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#water-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_humidifier_air_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_humidifier_air_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_humidity"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#supply"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_humidifier_air_outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_humidifier_air_outlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_humidity"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_humidifier_water_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_humidifier_water_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Steam"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#water-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_motor_electrical_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_motor_electrical_input">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPointConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="http://www.w3id.org/elementary#electrical_energy"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_input_electrical_energy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_motor_shaft -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_motor_shaft">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
+        <elementary:hasObservedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_angular_velocity"/>
+        <tso:hasOutput rdf:resource="http://www.w3id.org/elementary#mechanical_force"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_space_air_contained -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_space_air_contained">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#MeasurementConnectionPoint"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_contained_temperature"/>
+        <rdfs:label>conditioned-space</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_space_air_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_space_air_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_temperature"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_space_air_outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_space_air_outlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_temperature"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_space_energy_leakage_port -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_space_energy_leakage_port">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Energy"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_input_energy"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_output_energy"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#outside-air"/>
+    </owl:NamedIndividual>
+ 
+
+     <!-- http://www.w3id.org/elementary/applications/hvac#cp_space_energy_transfer_port -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_space_energy_transfer_port">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Energy"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_input_energy"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_output_energy"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_valve_actuation_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_valve_actuation_input">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ActuationConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="http://www.w3id.org/elementary#mechanical_force"/>
+        <elementary:manipulates rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_orifice_opening_ratio"/>
+    </owl:NamedIndividual>
+
+    
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_valve_bypass_water_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_valve_bypass_water_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_inlet_pressure"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#water-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_water_outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_water_outlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#OutletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_outlet_pressure"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#water-side"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_water_inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_water_inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#InletConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_inlet_pressure"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#water-side"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_air_heatexchange_surface -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_air_heatexchange_surface">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_output_energy"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual> 
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#cp_water_heatexchange_surface -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#cp_water_heatexchange_surface">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ConnectionPoint"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+        <elementary:isRelatedToVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_output_energy"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#water-side"/>
+    </owl:NamedIndividual> 
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#downstream -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#downstream">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#StreamKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#exhaust -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#exhaust">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#StreamKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#extract -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#extract">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#StreamKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#inlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#inlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessPosition"/>
+        <owl:sameAs rdf:resource="http://www.w3id.org/elementary/applications/hvac#intake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#intake -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#intake">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessPosition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#midstream -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#midstream">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#StreamKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#outlet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#outlet">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessPosition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_air_throttling -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_air_throttling">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_pressure"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_orifice_opening_ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_centrifugal_pressurization -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_centrifugal_pressurization">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:affectedUpstreamVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_pressure"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_pressure"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_shaft_speed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_convective_heat_transfer -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_convective_heat_transfer">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_temperature"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_outlet_temperature"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_temperature"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_inlet_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_electrical_heat_generation -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_electrical_heat_generation">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_outlet_temperature"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_inlet_temperature"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_electrical_power_input"/>
+        <rdfs:label>heat-generation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_electromotive_force_generation -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_electromotive_force_generation">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_shaft_power"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary#var_control_signal"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_electrical_power_input"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_frequency_modulation -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_frequency_modulation">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource=  "http://www.w3id.org/elementary/applications/hvac#var_electrical_power_output"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_electrical_power_input"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary#var_control_signal"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_electrical_power_control -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_electrical_power_control">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource=  "http://www.w3id.org/elementary/applications/hvac#var_electrical_output_power"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_electrical_input_power"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_control_signal"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_generic_heat_transfer -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_generic_heat_transfer">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_outlet_temperature"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_b_outlet_temperature"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_through_flowrate"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_b_through_flowrate"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_inlet_temperature"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_through_flowrate"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_space_air_handling -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_space_air_handling">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_temperature"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_temperature"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_energy_loss"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_space_air_heating_cooling -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_space_air_heating_cooling">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_temperature"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_input_energy"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_energy_loss"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_heat_generation -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_heat_generation">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_outlet_temperature"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_inlet_temperature"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_through_flowrate"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_input_energy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_particulate_separation -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_particulate_separation">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_particulate_measurement"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_radiative_heating -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_radiative_heating">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_output_energy"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_space_thermal_load -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_space_thermal_load">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_contained_temperature"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_temperature"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_thermal_heat_gain"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_thermal_heat_loss"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_vapor_humidification -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_vapor_humidification">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_humidity"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_humidity"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_water_throttling -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_water_throttling">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_inlet_pressure"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_orifice_opening_ratio"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#pm_water_mixing -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#pm_water_mixing">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#PhysicalMechanism"/>
+        <elementary:hasDependentVariable rdf:resource=  "http://www.w3id.org/elementary/applications/hvac#var_water_outlet_temperature"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_inlet_pressure"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_water_inlet_temperature"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_bypass_water_inlet_pressure"/>
+        <elementary:hasIndependentVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_bypass_water_inlet_temperature"/>
+        <elementary:hasManipulatedVariable rdf:resource="http://www.w3id.org/elementary/applications/hvac#var_orifice_opening_ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#return -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#return">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#StreamKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stream -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stream">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessPosition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_airhandled_space -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_airhandled_space">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_space_air_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_space_air_outlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_space_thermal_gain"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_space_thermal_loss"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_generic_heat_transfer"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_heattransferred_space -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_heattransferred_space">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_space_energy_transfer_port"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_space_energy_leakage_port"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_space_air_heating_cooling"/>
+    </owl:NamedIndividual>
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_air_diffuser -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_air_diffuser">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Air_Diffuser"/>
+        <owl:sameAs rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_damper"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_bypass -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_bypass">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_centrifugal-fan -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_centrifugal-fan">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Fan"/>
+        <elementary:hasComponentAction rdf:resource="http://www.w3id.org/elementary/applications/hvac#action_change_fan_power_input"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_fan_air_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_fan_air_outlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_fan_shaft"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_centrifugal_pressurization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_chilled_ceiling -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_chilled_ceiling">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Cold_Deck"/>
+        <owl:sameAs rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_generic-heat-exchanger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_compressor -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_compressor">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Compressor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_condenser -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_condenser">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Condenser"/>
+        <owl:sameAs rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_generic-heat-exchanger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_cooling_tower -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_cooling_tower">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Cooling_Tower"/>
+        <owl:sameAs rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_generic-heat-exchanger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_damper -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_damper">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <owl:sameAs rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_vav"/>
+        <elementary:hasComponentAction rdf:resource="http://www.w3id.org/elementary/applications/hvac#action_change_damper_position"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_damper_actuation_input"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_damper_air_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_damper_air_outlet"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_air_throttling"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_economizer -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_economizer">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Economizer"/>
+        <owl:sameAs rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_generic-heat-exchanger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_electric_boiler -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_electric_boiler">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Electric_Boiler"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_boiler_electrical_input"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_boiler_water_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_boiler_water_outlet"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_electrical_heat_generation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_evaporator -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_evaporator">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_filter -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_filter">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_filter_air_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_filter_air_outlet"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_particulate_separation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_forced-flow-heat-exchanger -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_forced-flow-heat-exchanger">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_air_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_air_outlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_water_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_heat_exchanger_water_outlet"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_convective_heat_transfer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_generic-heat-exchanger -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_generic-heat-exchanger">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_a_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_a_outlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_b_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_generic_heat_exchanger_fluid_b_outlet"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_generic_heat_transfer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_humidifier -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_humidifier">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Humidifier"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_humidifier_air_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_humidifier_air_outlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_humidifier_water_inlet"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_vapor_humidification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_mechanical_actuator -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_mechanical_actuator">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_actuation_signal_input"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_actuator_electrical_energy_input"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_actuator_mechanical_output"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_electromotive_force_generation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_motor -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_motor">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_motor_electrical_input"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_motor_shaft"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_electromotive_force_generation"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_electrical_relay -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_electrical_relay">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_electrical_power_input"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_electrical_power_output"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_drive_control_signal_input"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_electrical_power_control"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_variable_frequency_drive -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_variable_frequency_drive">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_drive_control_signal_input"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_elecrical_power_output"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_electrical_power_input"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_electrical_power_control"/>
+    </owl:NamedIndividual>    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_pump -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_pump">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Pump"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_radiator -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_radiator">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Radiator"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_water_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_water_outlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_air_heatexchange_surface"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_radiative_heating"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_space_heater -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_space_heater">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_valve -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_valve">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <elementary:hasComponentAction rdf:resource="http://www.w3id.org/elementary/applications/hvac#action_change_valve_position"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_valve_actuation_input"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_water_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_water_outlet"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_water_throttling"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_3-way_mixing_valve -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_3-way_mixing_valve">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <elementary:hasComponentAction rdf:resource="http://www.w3id.org/elementary/applications/hvac#action_change_valve_position"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_valve_actuation_input"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_water_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_valve_bypass_water_inlet"/>
+        <elementary:hasConnectionPoint rdf:resource="http://www.w3id.org/elementary/applications/hvac#cp_water_outlet"/>
+        <elementary:hasPhysicalMechanism rdf:resource="http://www.w3id.org/elementary/applications/hvac#pm_water_mixing"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+    </owl:NamedIndividual>
+
+
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#stype_vav -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#stype_vav">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Stereotype"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#VAV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#supply -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#supply">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#StreamKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#upstream -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#upstream">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#StreamKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_air_contained_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_air_contained_temperature">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#contained"/>
+        <elementary:hasQuantity rdf:resource="http://qudt.org/vocab/quantitykind/Temperature"/>
+        <Brick:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_air_flow_rate">
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#contained"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#stream"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Flow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_air_inlet_humidity -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_humidity">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#inlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Humidity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_air_inlet_particulate_measurement -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_particulate_measurement">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#inlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Air_Quality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_air_inlet_pressure -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_pressure">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#inlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Pressure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_air_inlet_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_air_inlet_temperature">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#inlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Temperature"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_air_outlet_flow_rate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_flow_rate">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Flow"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_air_outlet_humidity -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_humidity">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Humidity"/>
+        <elementary:suitableFor rdf:resource="http://www.w3id.org/elementary/applications/hvac#air-side"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_air_outlet_particulate_measurement -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_particulate_measurement">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Air_Quality"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_air_outlet_pressure -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_pressure">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Pressure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_air_outlet_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_air_outlet_temperature">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Temperature"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Air"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_angular_velocity -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_angular_velocity">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Rotational_Speed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_electrical_power_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_electrical_power_input">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="http://www.w3id.org/elementary#electrical_power"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#inlet"/>
+        <elementary:hasQuantity rdf:resource="http://qudt.org/vocab/unit/KiloW"/>
+        <rdfs:label>electrical-power</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_electrical_power_output -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_electrical_power_output">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="http://www.w3id.org/elementary#electrical_power"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="http://qudt.org/vocab/unit/KiloW"/>
+        <rdfs:label>electrical-power</rdfs:label>
+    </owl:NamedIndividual>
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_fluid_a_inlet_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_inlet_temperature">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Temperature"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Fluid"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_fluid_a_outlet_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_outlet_temperature">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Temperature"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Fluid"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_fluid_a_through_flowrate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_fluid_a_through_flowrate">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#contained"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Flow"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Fluid"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_fluid_b_inlet_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_fluid_b_inlet_temperature">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Temperature"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Fluid"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_fluid_b_outlet_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_fluid_b_outlet_temperature">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Temperature"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Fluid"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_fluid_b_through_flowrate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_fluid_b_through_flowrate">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#contained"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Flow"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Fluid"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_input_electrical_energy -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_input_electrical_energy">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="http://www.w3id.org/elementary#electrical_energy"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#inlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/BrickTag#Power"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_input_energy -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_input_energy">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Energy"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#inlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/BrickTag#Power"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_orifice_opening_ratio -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_orifice_opening_ratio">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#contained"/>
+        <elementary:hasQuantity rdf:resource="http://www.w3id.org/elementary/applications/hvac#Opening_Ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_output_energy -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_output_energy">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="https://brickschema.org/schema/Brick#Energy"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/BrickTag#Power"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_shaft_power -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_shaft_power">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_shaft_speed -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_shaft_speed">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Rotational_Speed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_shaft_torque -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_shaft_torque">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasQuantity rdf:resource="http://www.w3id.org/elementary#mechanical_force"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_thermal_heat_gain -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_thermal_heat_gain">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="http://www.w3id.org/elementary#thermal_energy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_thermal_heat_loss -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_thermal_heat_loss">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:dealsWithStuff rdf:resource="http://www.w3id.org/elementary#thermal_energy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_water_flow_rate">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#contained"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#stream"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Flow"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_water_inlet_pressure -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_water_inlet_pressure">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#inlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Pressure"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_bypass_water_inlet_pressure -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_bypass_water_inlet_pressure">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#bypass"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Pressure"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+    </owl:NamedIndividual>    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_water_inlet_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_water_inlet_temperature">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#inlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Temperature"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_bypass_water_inlet_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_bypass_water_inlet_temperature">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#inlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Temperature"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#var_water_outlet_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#var_water_outlet_temperature">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessVariable"/>
+        <elementary:hasProcessPosition rdf:resource="http://www.w3id.org/elementary/applications/hvac#outlet"/>
+        <elementary:hasQuantity rdf:resource="https://brickschema.org/schema/Brick#Temperature"/>
+        <elementary:hasSubstance rdf:resource="https://brickschema.org/schema/Brick#Water"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac#water-side -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac#water-side">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#StreamKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://brickschema.org/schema/Brick#Air -->
+
+    <owl:NamedIndividual rdf:about="https://brickschema.org/schema/Brick#Air"/>
+    
+
+
+    <!-- https://brickschema.org/schema/Brick#Air_Quality -->
+
+    <owl:NamedIndividual rdf:about="https://brickschema.org/schema/Brick#Air_Quality"/>
+    
+
+
+    <!-- https://brickschema.org/schema/Brick#Flow -->
+
+    <owl:NamedIndividual rdf:about="https://brickschema.org/schema/Brick#Flow"/>
+    
+
+
+    <!-- https://brickschema.org/schema/Brick#Pressure -->
+
+    <owl:NamedIndividual rdf:about="https://brickschema.org/schema/Brick#Pressure"/>
+    
+
+
+    <!-- https://brickschema.org/schema/Brick#Rotational_Speed -->
+
+    <owl:NamedIndividual rdf:about="https://brickschema.org/schema/Brick#Rotational_Speed"/>
+    
+
+
+    <!-- https://brickschema.org/schema/Brick#Temperature -->
+
+    <owl:NamedIndividual rdf:about="https://brickschema.org/schema/Brick#Temperature"/>
+    
+
+
+    <!-- https://brickschema.org/schema/Brick#Voltage -->
+
+    <owl:NamedIndividual rdf:about="https://brickschema.org/schema/Brick#Voltage"/>
+    
+
+
+    <!-- https://brickschema.org/schema/Brick#Water -->
+
+    <owl:NamedIndividual rdf:about="https://brickschema.org/schema/Brick#Water"/>
+    
+
+
+    <!-- https://brickschema.org/schema/BrickTag#Current -->
+
+    <owl:NamedIndividual rdf:about="https://brickschema.org/schema/BrickTag#Current"/>
+    
+
+
+    <!-- https://brickschema.org/schema/BrickTag#Power -->
+
+    <owl:NamedIndividual rdf:about="https://brickschema.org/schema/BrickTag#Power"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

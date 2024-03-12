@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.w3id.org/elementary/applications/hvac" uri="file:/C:/Data/Personal/PhD/Sources/repo/common-sense-ba/examples/hvac-v2.owl"/>
+    <uri id="Imports Wizard Entry" name="http://w3id.org/unified-engineering/ekaa" uri="file:/C:/Data/Personal/PhD/Sources/repo/autonomous-buildings/ekaa/ekaa.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3id.org/elementary" uri="file:/C:/Data/Personal/PhD/Sources/repo/common-sense-ba/elementary.owl"/>
+    <uri id="User Entered Import Resolution" name="https://w3id.org/ibp/StateMachineOntology-1.0.0" uri="state-machine-ontology.ttl"/>
     <uri id="User Entered Import Resolution" name="https://w3id.org/interont" uri="interont.ttl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
 </catalog>

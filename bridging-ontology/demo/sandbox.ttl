@@ -1,0 +1,133 @@
+@prefix : <http://www.example.org/ekaa/sandbox#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/ekaa/sandbox> .
+
+<http://www.example.org/ekaa/sandbox> rdf:type owl:Ontology ;
+                                       owl:imports <http://w3id.org/unified-engineering/ekaa> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://w3id.org/unified-engineering/ekaa#hasVariable
+<http://w3id.org/unified-engineering/ekaa#hasVariable> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.example.org/ekaa/sandbox#action_valve-modulation
+:action_valve-modulation rdf:type owl:NamedIndividual ,
+                                  <http://w3id.org/unified-engineering/ekaa#ComponentAction> .
+
+
+###  http://www.example.org/ekaa/sandbox#component_radiator
+:component_radiator rdf:type owl:NamedIndividual ,
+                             <http://w3id.org/unified-engineering/ekaa#Component> ;
+                    <http://w3id.org/unified-engineering/ekaa#hasPart> :component_radiator-valve .
+
+
+###  http://www.example.org/ekaa/sandbox#component_radiator-valve
+:component_radiator-valve rdf:type owl:NamedIndividual ,
+                                   <http://w3id.org/unified-engineering/ekaa#Component> ;
+                          <http://w3id.org/unified-engineering/ekaa#hasAction> :action_valve-modulation .
+
+
+###  http://www.example.org/ekaa/sandbox#goal_maintain-room-temperature
+:goal_maintain-room-temperature rdf:type owl:NamedIndividual ,
+                                         <http://w3id.org/unified-engineering/ekaa#Goal> ;
+                                <http://w3id.org/unified-engineering/ekaa#hasDesiredState> :goalstate_room-air-temperature .
+
+
+###  http://www.example.org/ekaa/sandbox#goalstate_room-air-temperature
+:goalstate_room-air-temperature rdf:type owl:NamedIndividual ,
+                                         <http://w3id.org/unified-engineering/ekaa#GoalState> ;
+                                <http://w3id.org/unified-engineering/ekaa#refersToVariable> :pvar_air-temperature .
+
+
+###  http://www.example.org/ekaa/sandbox#paction_flow-modulation
+:paction_flow-modulation rdf:type owl:NamedIndividual ,
+                                  <http://w3id.org/unified-engineering/ekaa#ProcessAction> ;
+                         <http://w3id.org/unified-engineering/ekaa#affectedVariable> :pvar_water-flow-rate ;
+                         <http://w3id.org/unified-engineering/ekaa#usesComponentAction> :action_valve-modulation .
+
+
+###  http://www.example.org/ekaa/sandbox#process_context_room-air
+:process_context_room-air rdf:type owl:NamedIndividual ,
+                                   <http://w3id.org/unified-engineering/ekaa#ProcessContext> .
+
+
+###  http://www.example.org/ekaa/sandbox#process_heat-exchange
+:process_heat-exchange rdf:type owl:NamedIndividual ,
+                                <http://w3id.org/unified-engineering/ekaa#Process> ;
+                       <http://w3id.org/unified-engineering/ekaa#hasVariable> :pvar_air-temperature ,
+                                                                              :pvar_water-flow-rate .
+
+
+###  http://www.example.org/ekaa/sandbox#program_heating-control
+:program_heating-control rdf:type owl:NamedIndividual ,
+                                  <http://w3id.org/unified-engineering/ekaa#AutomationProgram> ;
+                         <http://w3id.org/unified-engineering/ekaa#hasDesiredState> :program_heating-control-goalstate .
+
+
+###  http://www.example.org/ekaa/sandbox#program_heating-control-goalstate
+:program_heating-control-goalstate rdf:type owl:NamedIndividual ,
+                                            <http://w3id.org/unified-engineering/ekaa#GoalState> ;
+                                   <http://w3id.org/unified-engineering/ekaa#refersToVariable> :pvar_air-temperature .
+
+
+###  http://www.example.org/ekaa/sandbox#pvar_air-temperature
+:pvar_air-temperature rdf:type owl:NamedIndividual ,
+                               <http://w3id.org/unified-engineering/ekaa#ProcessVariable> ;
+                      <http://w3id.org/unified-engineering/ekaa#hasQuantity> :quantity_temperature ;
+                      <http://w3id.org/unified-engineering/ekaa#hasStuff> :stuff_air .
+
+
+###  http://www.example.org/ekaa/sandbox#pvar_water-flow-rate
+:pvar_water-flow-rate rdf:type owl:NamedIndividual ,
+                               <http://w3id.org/unified-engineering/ekaa#ProcessVariable> ;
+                      <http://w3id.org/unified-engineering/ekaa#hasQuantity> :quantity_flowrate ;
+                      <http://w3id.org/unified-engineering/ekaa#hasStuff> :stuff_water .
+
+
+###  http://www.example.org/ekaa/sandbox#quantity_flowrate
+:quantity_flowrate rdf:type owl:NamedIndividual .
+
+
+###  http://www.example.org/ekaa/sandbox#quantity_temperature
+:quantity_temperature rdf:type owl:NamedIndividual .
+
+
+###  http://www.example.org/ekaa/sandbox#req_maintain-thermal-comfort
+:req_maintain-thermal-comfort rdf:type owl:NamedIndividual ,
+                                       <http://w3id.org/unified-engineering/ekaa#FunctionalRequirement> ;
+                              <http://w3id.org/unified-engineering/ekaa#concerns> :scon_room-1 ;
+                              <http://w3id.org/unified-engineering/ekaa#hasGoal> :goal_maintain-room-temperature .
+
+
+###  http://www.example.org/ekaa/sandbox#scon_room-1
+:scon_room-1 rdf:type owl:NamedIndividual ,
+                      <http://w3id.org/unified-engineering/ekaa#SystemContext> .
+
+
+###  http://www.example.org/ekaa/sandbox#stuff_air
+:stuff_air rdf:type owl:NamedIndividual .
+
+
+###  http://www.example.org/ekaa/sandbox#stuff_water
+:stuff_water rdf:type owl:NamedIndividual .
+
+
+###  http://www.example.org/ekaa/sandbox#system_room-heating
+:system_room-heating rdf:type owl:NamedIndividual ,
+                              <http://w3id.org/unified-engineering/ekaa#System> ;
+                     <http://w3id.org/unified-engineering/ekaa#hasComponent> :component_radiator ;
+                     <http://w3id.org/unified-engineering/ekaa#serves> :scon_room-1 .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

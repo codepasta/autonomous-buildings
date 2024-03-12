@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3id.org/PhyDiT"
+     xml:base="http://www.w3id.org/PhyDiT"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.w3id.org/PhyDiT">
+        <rdfs:comment>An ontology to enable creation of physics-inflused description of a digital twin.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#affects -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#affects">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/PhyDiT#hasTDMetadata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#component -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#component">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/PhyDiT#hasTDMetadata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#hasCurrentValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#hasCurrentValue"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#hasMaximumValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#hasMaximumValue"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#hasMechanism -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#hasMechanism"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#hasMinimumValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#hasMinimumValue"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#hasNominalValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#hasNominalValue"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#hasTDMetadata -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#hasTDMetadata"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#hasVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#hasVariable"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#intendedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#intendedFor"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#manages -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#manages"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#manipulates -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#manipulates">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/PhyDiT#hasTDMetadata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#mechanism -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#mechanism">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/PhyDiT#hasTDMetadata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#observes -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#observes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/PhyDiT#hasTDMetadata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#process -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#process">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/PhyDiT#hasTDMetadata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#refersTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#refersTo"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#relatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/PhyDiT#relatedTo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#Actuator -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#Actuator">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#PeripheralComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#Component -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#Component">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#SystemDesignConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#ControlProgram -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#ControlProgram">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#ControlProgramConcept"/>
+        <rdfs:comment>A software program that contains the control logic for operating the technical system</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#ControlProgramConcept -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#ControlProgramConcept">
+        <rdfs:comment>An abstract concept related to control programs</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#DesignSpecification -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#DesignSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#SystemDesignConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#Input -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#Input">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#ProgramInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#MeasurementUnit -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#MeasurementUnit">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#Output -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#Output">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#ProgramInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#Parameter -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#Parameter">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#ProgramInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#PeripheralComponent -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#PeripheralComponent">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#PhysicalMechanism -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#PhysicalMechanism">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#PhysicalProcess -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#PhysicalProcess">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#PhysicalProcessConcept -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#PhysicalProcessConcept"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#PhysicalStuff -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#PhysicalStuff">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#ProcessPosition -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#ProcessPosition">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#ProcessVariable -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#ProcessVariable">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#ProgramInterface -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#ProgramInterface">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#ControlProgramConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#QuantityKind -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#QuantityKind">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#PhysicalProcessConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#Sensor -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#PeripheralComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#System -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#System">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#SystemDesignConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#SystemDesignConcept -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#SystemDesignConcept"/>
+    
+
+
+    <!-- http://www.w3id.org/PhyDiT#Value -->
+
+    <owl:Class rdf:about="http://www.w3id.org/PhyDiT#Value">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/PhyDiT#PhysicalProcessConcept"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

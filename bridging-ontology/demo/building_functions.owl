@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/building_functions#"
+     xml:base="http://www.example.org/building_functions"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ekaa="http://w3id.org/unified-engineering/ekaa#">
+    <owl:Ontology rdf:about="http://www.example.org/building-functions">
+        <owl:imports rdf:resource="http://w3id.org/unified-engineering/ekaa"/>
+        <owl:imports rdf:resource="http://w3id.org/unified-engineering/building/processes"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/building-functions#delegation_limit_co2_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#delegation_limit_co2_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Delegation"/>
+        <ekaa:hasDesiredState rdf:resource="http://www.example.org/building-functions#goal_state_air_quality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#delegation_maintain_light_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#delegation_maintain_light_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Delegation"/>
+        <ekaa:hasDesiredState rdf:resource="http://www.example.org/building-functions#goal_state_light_level"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#delegation_maintain_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#delegation_maintain_temperature">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Delegation"/>
+        <ekaa:hasDesiredState rdf:resource="http://www.example.org/building-functions#goal_state_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_limit_co2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_limit_co2">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Goal"/>
+        <ekaa:achievedBy rdf:resource="http://www.example.org/building-functions#delegation_limit_co2_level"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_maintain_constant_light_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_maintain_constant_light_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Goal"/>
+        <ekaa:achievedBy rdf:resource="http://www.example.org/building-functions#delegation_maintain_light_level"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_maintain_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_maintain_temperature">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Goal"/>
+        <ekaa:achievedBy rdf:resource="http://www.example.org/building-functions#delegation_maintain_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_prevent_sun_glare -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_prevent_sun_glare">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Goal"/>
+        <ekaa:achievedBy rdf:resource="http://www.example.org/building-functions#operation_lower_blinds"/>
+        <ekaa:hasDesiredState rdf:resource="http://www.example.org/building-functions#goal_state_incident_sun_light"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_state_air_quality -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_state_air_quality">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#GoalState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_state_incident_sun_light -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_state_incident_sun_light">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#GoalState"/>
+        <ekaa:refersToVariable rdf:resource="http://www.example.org/building-functions#process_var_average_luminosity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_state_light_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_state_light_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#GoalState"/>
+        <ekaa:refersToVariable rdf:resource="http://www.example.org/building-functions#process_var_average_luminosity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#goal_state_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#goal_state_temperature">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#GoalState"/>
+        <ekaa:refersToVariable rdf:resource="http://www.example.org/building-functions#process_var_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#operation_lower_blinds -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#operation_lower_blinds">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Operation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_cooling -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_cooling">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#CoolingProcess"/>
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Process"/>
+        <ekaa:hasMechanism rdf:resource="http://www.example.org/building-functions#process_mech_heat_exchange"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_ctx_air -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_ctx_air">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessContext"/>
+        <ekaa:flowsTo rdf:resource="http://www.example.org/building-functions#sys_ctx_room"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_heating -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_heating">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#HeatingProcess"/>
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Process"/>
+        <ekaa:hasMechanism rdf:resource="http://www.example.org/building-functions#process_mech_heat_exchange"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_light_emission -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_light_emission">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#Illumination"/>
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_light_transmission_modulation -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_light_transmission_modulation">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_mech_air_movement -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_mech_air_movement">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#Pressurization"/>
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessMechanism"/>
+        <ekaa:hasDependentVariable rdf:resource="http://www.example.org/building-functions#process_var_co2_level"/>
+        <ekaa:hasIndependentVariable rdf:resource="http://www.example.org/building-functions#process_var_fresh_air_intake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_mech_heat_exchange -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_mech_heat_exchange">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#RadiativeExchange"/>
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessMechanism"/>
+        <ekaa:energyFlowsTo rdf:resource="http://www.example.org/building-functions#process_ctx_air"/>
+        <ekaa:hasDependentVariable rdf:resource="http://www.example.org/building-functions#process_var_temperature"/>
+        <ekaa:hasIndependentVariable rdf:resource="http://www.example.org/building-functions#process_var_thermal_energy_input"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_average_luminosity -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_average_luminosity">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_co2_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_co2_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_dimming_output -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_dimming_output">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_fresh_air_intake -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_fresh_air_intake">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_outdoor_light_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_outdoor_light_level">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_sun_elevation -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_sun_elevation">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_sunblinds_aperture -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_sunblinds_aperture">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_temperature">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_var_thermal_energy_input -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_var_thermal_energy_input">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#ProcessVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#process_ventilation -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#process_ventilation">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/building/processes#MassTransferProcess"/>
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#Process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#req_ensure_optimal_lighting -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#req_ensure_optimal_lighting">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#FunctionalRequirement"/>
+        <ekaa:hasGoal rdf:resource="http://www.example.org/building-functions#goal_maintain_constant_light_level"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#req_maintain_air_quality -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#req_maintain_air_quality">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#FunctionalRequirement"/>
+        <ekaa:hasGoal rdf:resource="http://www.example.org/building-functions#goal_limit_co2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#req_maintain_thermal_comfort -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#req_maintain_thermal_comfort">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#FunctionalRequirement"/>
+        <ekaa:hasGoal rdf:resource="http://www.example.org/building-functions#goal_maintain_temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#req_prevent_sun_glare -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#req_prevent_sun_glare">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#FunctionalRequirement"/>
+        <ekaa:hasGoal rdf:resource="http://www.example.org/building-functions#goal_prevent_sun_glare"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/building-functions#sys_ctx_room -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/building-functions#sys_ctx_room">
+        <rdf:type rdf:resource="http://w3id.org/unified-engineering/ekaa#SystemContext"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

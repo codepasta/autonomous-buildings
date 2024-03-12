@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3id.org/elementary/applications/hvac/ahu#"
+     xml:base="http://www.w3id.org/elementary/applications/hvac/ahu"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:tso="https://w3id.org/tso#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:qudt="http://qudt.org/schema/qudt/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:Brick="https://brickschema.org/schema/Brick#"
+     xmlns:shacl="http://www.w3.org/ns/shacl#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:bacnet="http://data.ashrae.org/bacnet/2020#"
+     xmlns:schema="http://schema.org/"
+     xmlns:elementary="http://www.w3id.org/elementary#">
+    <owl:Ontology rdf:about="http://www.w3id.org/elementary/applications/hvac/rahu">
+        <owl:imports rdf:resource="http://www.w3id.org/elementary"/>
+        <owl:imports rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://brickschema.org/schema/Brick#Fan -->
+
+    <owl:Class rdf:about="https://brickschema.org/schema/Brick#Fan"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac/ahu#ahu_bypass_section -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_bypass_section">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessPathway"/>
+        <elementary:hasStreamKind rdf:resource="http://www.w3id.org/elementary/applications/hvac#bypass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac/ahu#ahu_extract_section -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_extract_section">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#ProcessPathway"/>
+        <elementary:hasStreamKind rdf:resource="http://www.w3id.org/elementary/applications/hvac#extract"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac/ahu#bp_damper -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#bp_damper">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Damper"/>
+        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#heating_coil"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_damper"/>
+        <elementary:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_bypass_section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac/ahu#eh_damper -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#eh_damper">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Damper"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_damper"/>
+        <elementary:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_extract_section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3id.org/elementary/applications/hvac/ahu#extract_fan -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/elementary/applications/hvac/ahu#extract_fan">
+        <rdf:type rdf:resource="http://www.w3id.org/elementary#Component"/>
+        <rdf:type rdf:resource="https://brickschema.org/schema/Brick#Fan"/>
+        <elementary:fedBy rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#conditioned_space"/>
+        <elementary:hasStereotype rdf:resource="http://www.w3id.org/elementary/applications/hvac#stype_centrifugal-fan"/>
+        <elementary:isPartOf rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#ahu_extract_section"/>
+        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#bp_damper"/>
+        <elementary:feeds rdf:resource="http://www.w3id.org/elementary/applications/hvac/ahu#eh_damper"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

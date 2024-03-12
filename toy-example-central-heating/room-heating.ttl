@@ -1,0 +1,115 @@
+@prefix : <http://www.example.org/systems/heating#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eka: <http://w3id.org/unified-engineering/ekaa#>.
+@prefix elem: <http://www.w3id.org/elementary#>.
+@prefix hvac: <http://www.w3id.org/elementary/applications/hvac#>.
+@prefix brk: <https://brickschema.org/schema/Brick#>.
+@base <http://www.example.org/systems/heating> .
+
+<http://www.example.org/systems/heating> rdf:type owl:Ontology ;
+                                          owl:imports <http://www.w3id.org/elementary> ,
+                                                      <http://www.w3id.org/elementary/applications/hvac> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.example.org/systems/heating#component-energy-source-electrical
+:component-energy-source-electrical rdf:type owl:NamedIndividual ;
+                        rdfs:label "Electrical Supply";
+                        elem:feeds :component-boiler-1-relay .
+
+###  http://www.example.org/systems/heating#component-boiler-relay
+:component-boiler-1-relay rdf:type owl:NamedIndividual,brk:Relay ;
+                        elem:hasStereotype hvac:stype_electrical_relay ;
+                        rdfs:label "Boiler-1 Relay";
+                        elem:feeds :component-boiler-1 .
+
+###  http://www.example.org/systems/heating#component-boiler-temperature-sensor
+:component-boiler-1-temperature-sensor rdf:type owl:NamedIndividual,brk:Temperature_Sensor .
+
+###  http://www.example.org/systems/heating#component-boiler
+:component-boiler-1 rdf:type owl:NamedIndividual,brk:Boiler ;
+                  elem:feeds :component-radiator-1-valve ;
+                  elem:feeds :component-radiator-2-valve ;
+                  rdfs:label "Boiler-1";
+                  elem:hasStereotype hvac:stype_electric_boiler .
+
+###  http://www.example.org/systems/heating#component-valve-1
+:component-radiator-1-valve rdf:type owl:NamedIndividual ,brk:Valve ;
+                rdfs:label "Radiator-1 Valve";
+                 elem:hasStereotype hvac:stype_valve ;
+                 elem:feeds :component-radiator-1.
+
+###  http://www.example.org/systems/heating#component-valve-2
+:component-radiator-2-valve rdf:type owl:NamedIndividual ,brk:Valve ;
+                rdfs:label "Radiator-2 Valve";
+                 elem:hasStereotype hvac:stype_valve ;
+                 elem:feeds :component-radiator-2.
+
+###  http://www.example.org/systems/heating#component-radiator-1
+:component-radiator-1 rdf:type owl:NamedIndividual,brk:Radiator;
+                    elem:feeds :component-room-101 ;
+                    rdfs:label "Radiator-1";
+                    elem:hasStereotype hvac:stype_radiator.
+
+###  http://www.example.org/systems/heating#component-radiator-2
+:component-radiator-2 rdf:type owl:NamedIndividual,brk:Radiator ;
+                    elem:feeds :component-room-101 ;
+                    rdfs:label "Radiator-2";
+                    elem:hasStereotype hvac:stype_radiator.
+
+###  http://www.example.org/systems/heating#component-room
+:component-room-101 rdf:type owl:NamedIndividual ,brk:Room ;
+                         rdfs:label "Room-101";
+                         elem:hasStereotype hvac:stype_heattransferred_space.
+
+
+
+###  http://www.example.org/systems/heating#component-temperature-sensor
+:component-temperature-sensor rdf:type owl:NamedIndividual ,
+                                       <https://brickschema.org/schema/Brick#Temperature_Sensor> ;
+                            rdfs:label "Room-101 Tsensor";
+                            <http://www.w3id.org/elementary#measures> :component-room .
+
+
+###  http://www.example.org/systems/heating#program-boiler-control
+:program-boiler-control rdf:type owl:NamedIndividual ,
+                                 <http://www.w3id.org/elementary#AutomationProgram> ;
+                        <http://www.w3id.org/elementary#automates> :system-heat-generation ;
+                        eka:hasInput :component-boiler-temperature-sensor ;
+                        eka:hasOutput :component-boiler-relay ;
+                        eka:modeledBy <http://www.example.org/boiler/fsm#fsm_boiler>.
+
+
+###  http://www.example.org/systems/heating#program-room-temperature-control
+:program-room-temperature-control rdf:type owl:NamedIndividual ,
+                                           <http://www.w3id.org/elementary#AutomationProgram> ;
+                                  <http://www.w3id.org/elementary#automates> :system-room-heating ;
+                                  eka:hasInput :component-temperature-sensor ;
+                                  eka:hasOutput :component-valve ;
+                                  eka:modeledBy <http://www.example.org/thermostat/fsm#fsm_thermostat>.
+
+
+###  http://www.example.org/systems/heating#system-heat-generation
+:system-heat-generation rdf:type owl:NamedIndividual ,
+                                 eka:System ;
+                        eka:hasComponent :component-boiler ,
+                                                            :component-boiler-relay ,
+                                                            :component-boiler-temperature-sensor .
+
+
+###  http://www.example.org/systems/heating#system-room-heating
+:system-room-heating rdf:type owl:NamedIndividual ,
+                              eka:System ;
+                     eka:hasComponent :component-radiator ,
+                                                         :component-room ,
+                                                         :component-temperature-sensor ,
+                                                         :component-valve .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

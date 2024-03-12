@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/automation-strategies#"
+     xml:base="http://www.example.org/automation-strategies"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:qudt="http://qudt.org/schema/qudt/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:shacl="http://www.w3.org/ns/shacl#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:bacnet="http://data.ashrae.org/bacnet/2020#"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="http://www.example.org/automation-strategies">
+        <owl:imports rdf:resource="http://w3id.org/unified-engineering/ekaa"/>
+        <owl:imports rdf:resource="http://w3id.org/unified-engineering/building/processes"/>
+        <owl:imports rdf:resource="https://brickschema.org/schema/1.3/Brick"/>
+        <owl:imports rdf:resource="https://w3id.org/ibp/CTRLont-0.3.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://w3id.org/unified-engineering/ekaa#AutomationDescription -->
+
+    <rdf:Description rdf:about="http://w3id.org/unified-engineering/ekaa#AutomationDescription">
+        <owl:equivalentClass rdf:resource="http://w3id.org/unified-engineering/ekaa#AutomationProgram"/>
+        <owl:equivalentClass rdf:resource="https://w3id.org/ibp/CTRLont#ApplicationLogic"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://w3id.org/unified-engineering/ekaa#AutomationProgram -->
+
+    <rdf:Description rdf:about="http://w3id.org/unified-engineering/ekaa#AutomationProgram"/>
+    
+
+
+    <!-- http://www.example.org/automation-strategies#HeatingControlProgramType1 -->
+
+    <owl:Class rdf:about="http://www.example.org/automation-strategies#HeatingControlProgramType1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://w3id.org/unified-engineering/ekaa#carriesOut"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/unified-engineering/ekaa#Intent"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://w3id.org/unified-engineering/ekaa#utilizes"/>
+                                        <owl:someValuesFrom rdf:resource="http://w3id.org/unified-engineering/building/processes#HeatingProcess"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://w3id.org/unified-engineering/ekaa#utilizes"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="https://brickschema.org/schema/Brick#System"/>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://w3id.org/unified-engineering/ekaa#accomplishes"/>
+                                                <owl:someValuesFrom rdf:resource="http://w3id.org/unified-engineering/building/processes#RadiativeExchange"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://w3id.org/unified-engineering/ekaa#hasPart"/>
+                                                <owl:someValuesFrom rdf:resource="https://brickschema.org/schema/Brick#Radiant_Panel"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/ekaa#AutomationProgram"/>
+        <rdfs:comment>Control program for radiative panel heat exchangers</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/automation-strategies#HeatingControlProgramType2 -->
+
+    <owl:Class rdf:about="http://www.example.org/automation-strategies#HeatingControlProgramType2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://w3id.org/unified-engineering/ekaa#carriesOut"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/unified-engineering/ekaa#Intent"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://w3id.org/unified-engineering/ekaa#utilizes"/>
+                                        <owl:someValuesFrom rdf:resource="http://w3id.org/unified-engineering/building/processes#HeatingProcess"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://w3id.org/unified-engineering/ekaa#utilizes"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/unified-engineering/ekaa#System"/>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://w3id.org/unified-engineering/ekaa#accomplishes"/>
+                                                <owl:someValuesFrom rdf:resource="http://w3id.org/unified-engineering/building/processes#RadiativeExchange"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://w3id.org/unified-engineering/ekaa#hasPart"/>
+                                                <owl:someValuesFrom rdf:resource="https://brickschema.org/schema/Brick#Space_Heater"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/unified-engineering/ekaa#AutomationProgram"/>
+        <rdfs:comment>Control program for radiative electrical heaters</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ibp/CTRLont#ApplicationLogic -->
+
+    <rdf:Description rdf:about="https://w3id.org/ibp/CTRLont#ApplicationLogic"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/automation-strategies#program_rad_hctrl -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/automation-strategies#program_rad_hctrl"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

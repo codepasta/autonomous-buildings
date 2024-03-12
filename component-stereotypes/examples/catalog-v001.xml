@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.w3id.org/elementary/applications/hvac/ahu" uri="ahu-v2.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3id.org/elementary/applications/hvac" uri="hvac-v2.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3id.org/elementary/applications/hvac" uri="hvac-v2.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3id.org/elementary/applications/hvac" uri="hvac.owl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/v0.3/tubes" uri="file:/C:/Data/Personal/PhD/Sources/repo/common-sense-ba/underlying-ontologies/tubes.owl"/>
+    <uri id="Imports Wizard Entry" name="https://brickschema.org/schema/1.3/Brick" uri="file:/C:/Data/Personal/PhD/Sources/repo/common-sense-ba/underlying-ontologies/Brick.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3id.org/elementary" uri="file:/C:/Data/Personal/PhD/Sources/repo/common-sense-ba/elementary.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1699346200366" name="duplicate:http://www.w3id.org/elementary/applications/hvac/ahu" uri="ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1699346200366" name="duplicate:http://www.w3id.org/elementary/applications/hvac/ahu" uri="erahu-ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1699346200366" name="duplicate:http://www.w3id.org/elementary/applications/hvac/ahu" uri="rahu-ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1699346200366" name="http://www.w3id.org/elementary/applications/hvac/pfahu" uri="pfahu-ahu-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1699346200366" name="http://www.w3id.org/elmentary/applications/hvac" uri="hvac-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1699346200366" name="shadowed:http://www.w3id.org/elementary/applications/hvac/ahu" uri="temp/ahu.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1699346200366" name="shadowed:http://www.w3id.org/elmentary/applications/hvac" uri="temp/hvac.owl"/>
+    </group>
+</catalog>

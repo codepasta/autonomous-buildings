@@ -1,0 +1,958 @@
+@prefix : <http://w3id.org/unified-engineering/requirements#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://w3id.org/unified-engineering/requirements> .
+
+<http://w3id.org/unified-engineering/requirements> rdf:type owl:Ontology ;
+                                                    rdfs:comment """An ontology to describe a system from the presepective of the requirements against which it was built.
+The ontology is based on Goal-oriented Requirements Engineering methods and the concepts are from various research work.""" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://w3id.org/unified-engineering/requirements#achievedBy
+:achievedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :achieves ;
+            rdfs:domain :Goal ;
+            rdfs:comment "The agency which achieves the goal" .
+
+
+###  http://w3id.org/unified-engineering/requirements#achieves
+:achieves rdf:type owl:ObjectProperty ;
+          rdfs:range :Goal ;
+          rdfs:comment "Relation to a Goal that is achieved by an agency (typically a software program)" .
+
+
+###  http://w3id.org/unified-engineering/requirements#actedUponBy
+:actedUponBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :usedBy ;
+             owl:inverseOf :actsOn ;
+             rdfs:range :Agent .
+
+
+###  http://w3id.org/unified-engineering/requirements#actsOn
+:actsOn rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :uses ;
+        rdfs:domain :Agent .
+
+
+###  http://w3id.org/unified-engineering/requirements#appliesTo
+:appliesTo rdf:type owl:ObjectProperty ;
+           rdfs:domain :Requirement ;
+           rdfs:range :Context ;
+           rdfs:comment "The Context to which a Requirement applies to" .
+
+
+###  http://w3id.org/unified-engineering/requirements#containedIn
+:containedIn rdf:type owl:ObjectProperty ;
+             owl:inverseOf :contains ;
+             rdfs:domain :Substance ;
+             rdfs:comment "Relation to the physical or chemical containment" .
+
+
+###  http://w3id.org/unified-engineering/requirements#contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:range :Substance ;
+          rdfs:comment "Relation to what is physically or chemically contained" .
+
+
+###  http://w3id.org/unified-engineering/requirements#describedBy
+:describedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf :describesRequirement ;
+             rdfs:range :Artifact ;
+             rdfs:comment "Relation to an Artifact which describes a requirement, system, component etc." .
+
+
+###  http://w3id.org/unified-engineering/requirements#describesRequirement
+:describesRequirement rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Artifact ;
+                      rdfs:range :Requirement ;
+                      rdfs:comment "An Artifact which is related to a Requirement in such a way that it expounds the Requirement." .
+
+
+###  http://w3id.org/unified-engineering/requirements#employedBy
+:employedBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf :employs .
+
+
+###  http://w3id.org/unified-engineering/requirements#employs
+:employs rdf:type owl:ObjectProperty ;
+         rdfs:domain :Agent .
+
+
+###  http://w3id.org/unified-engineering/requirements#enablesRequirement
+:enablesRequirement rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :relatedRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#fedBy
+:fedBy rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :hasProcessLink ;
+       owl:inverseOf :feeds .
+
+
+###  http://w3id.org/unified-engineering/requirements#feeds
+:feeds rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :hasProcessLink .
+
+
+###  http://w3id.org/unified-engineering/requirements#fulfilledBy
+:fulfilledBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Requirement ;
+             rdfs:range :Agent .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasConstraint
+:hasConstraint rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasContact
+:hasContact rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasContext
+:hasContext rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isContextOf .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasDesiredState
+:hasDesiredState rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Goal ;
+                 rdfs:range :State .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasDiscipline
+:hasDiscipline rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasGoal
+:hasGoal rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isGoalOf .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasInvariant
+:hasInvariant rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasConstraint .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasMeasurement
+:hasMeasurement rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasNextAction
+:hasNextAction rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasNextState
+:hasNextState rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :isPartOf .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasPostCondition
+:hasPostCondition rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasConstraint .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasPreCondition
+:hasPreCondition rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasConstraint .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasPriorityRationale
+:hasPriorityRationale rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasProcessContext
+:hasProcessContext rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasProcessLink
+:hasProcessLink rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasQuality
+:hasQuality rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasRationale
+:hasRationale rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasRequirement
+:hasRequirement rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasSource
+:hasSource rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasStakeholder
+:hasStakeholder rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasState
+:hasState rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasStatus
+:hasStatus rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#ifState
+:ifState rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#includes
+:includes rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#isContextOf
+:isContextOf rdf:type owl:ObjectProperty ;
+             owl:propertyChainAxiom ( :isContextOf
+                                      :includes
+                                    ) .
+
+
+###  http://w3id.org/unified-engineering/requirements#isDerivedFrom
+:isDerivedFrom rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isDerivedInto .
+
+
+###  http://w3id.org/unified-engineering/requirements#isDerivedInto
+:isDerivedInto rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#isGoalOf
+:isGoalOf rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#isPartOf
+:isPartOf rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#playsRoleIn
+:playsRoleIn rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#referencedBy
+:referencedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :references .
+
+
+###  http://w3id.org/unified-engineering/requirements#references
+:references rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#refines
+:refines rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :relatedRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#relatedRequirement
+:relatedRequirement rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#thenResponse
+:thenResponse rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#togetherWith
+:togetherWith rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :relatedRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#usedBy
+:usedBy rdf:type owl:ObjectProperty ;
+        rdfs:range :Agent .
+
+
+###  http://w3id.org/unified-engineering/requirements#usedInRequirement
+:usedInRequirement rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#uses
+:uses rdf:type owl:ObjectProperty ;
+      rdfs:domain :Agent ;
+      rdfs:range :Component .
+
+
+###  http://w3id.org/unified-engineering/requirements#valueFrom
+:valueFrom rdf:type owl:ObjectProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#whileState
+:whileState rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://w3id.org/unified-engineering/requirements#hasDuration
+:hasDuration rdf:type owl:DatatypeProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasIndex
+:hasIndex rdf:type owl:DatatypeProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasMaximumValue
+:hasMaximumValue rdf:type owl:DatatypeProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasMinimumValue
+:hasMinimumValue rdf:type owl:DatatypeProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasPriority
+:hasPriority rdf:type owl:DatatypeProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasRule
+:hasRule rdf:type owl:DatatypeProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasTargetValue
+:hasTargetValue rdf:type owl:DatatypeProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasURL
+:hasURL rdf:type owl:DatatypeProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasValueBandwidth
+:hasValueBandwidth rdf:type owl:DatatypeProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasVariationBandLowerValue
+:hasVariationBandLowerValue rdf:type owl:DatatypeProperty .
+
+
+###  http://w3id.org/unified-engineering/requirements#hasVariationBandUpperValue
+:hasVariationBandUpperValue rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/unified-engineering/requirements#AccessibilityRequirement
+:AccessibilityRequirement rdf:type owl:Class ;
+                          rdfs:subClassOf :NonFunctionalRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#AchievementGoal
+:AchievementGoal rdf:type owl:Class ;
+                 rdfs:subClassOf :Goal .
+
+
+###  http://w3id.org/unified-engineering/requirements#Action
+:Action rdf:type owl:Class ;
+        rdfs:subClassOf :StateMachineEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#Actuation
+:Actuation rdf:type owl:Class ;
+           rdfs:subClassOf :Action .
+
+
+###  http://w3id.org/unified-engineering/requirements#Actuator
+:Actuator rdf:type owl:Class ;
+          rdfs:subClassOf :Component .
+
+
+###  http://w3id.org/unified-engineering/requirements#Agent
+:Agent rdf:type owl:Class ;
+       rdfs:comment "An agent causes actions on or perceives the process (physical/software)." .
+
+
+###  http://w3id.org/unified-engineering/requirements#ArchitecturalPlan
+:ArchitecturalPlan rdf:type owl:Class ;
+                   rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#Artifact
+:Artifact rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/requirements#ArtificialAgent
+:ArtificialAgent rdf:type owl:Class ;
+                 rdfs:subClassOf :Agent ;
+                 rdfs:comment "Software programs that are either reactive or delibrative to achieve goals." .
+
+
+###  http://w3id.org/unified-engineering/requirements#AtomicAction
+:AtomicAction rdf:type owl:Class ;
+              rdfs:subClassOf :Action .
+
+
+###  http://w3id.org/unified-engineering/requirements#AutomationSystemPlan
+:AutomationSystemPlan rdf:type owl:Class ;
+                      rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#AvailabilityRequirement
+:AvailabilityRequirement rdf:type owl:Class ;
+                         rdfs:subClassOf :NonFunctionalRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#AvoidanceGoal
+:AvoidanceGoal rdf:type owl:Class ;
+               rdfs:subClassOf :Goal .
+
+
+###  http://w3id.org/unified-engineering/requirements#BusinessOwner
+:BusinessOwner rdf:type owl:Class ;
+               rdfs:subClassOf :Stakeholder .
+
+
+###  http://w3id.org/unified-engineering/requirements#Circumstance
+:Circumstance rdf:type owl:Class ;
+              rdfs:subClassOf :State .
+
+
+###  http://w3id.org/unified-engineering/requirements#Communication
+:Communication rdf:type owl:Class ;
+               rdfs:subClassOf :Action .
+
+
+###  http://w3id.org/unified-engineering/requirements#Component
+:Component rdf:type owl:Class ;
+           rdfs:subClassOf :SystemDesignEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#ConcurrentAction
+:ConcurrentAction rdf:type owl:Class ;
+                  rdfs:subClassOf :Action .
+
+
+###  http://w3id.org/unified-engineering/requirements#Condition
+:Condition rdf:type owl:Class ;
+           rdfs:subClassOf :Constraint .
+
+
+###  http://w3id.org/unified-engineering/requirements#Constraint
+:Constraint rdf:type owl:Class ;
+            rdfs:subClassOf :Requirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#Context
+:Context rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/requirements#DatapointList
+:DatapointList rdf:type owl:Class ;
+               rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#Discipline
+:Discipline rdf:type owl:Class ;
+            rdfs:subClassOf :OrganizationalEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#ElectricalSystemPlan
+:ElectricalSystemPlan rdf:type owl:Class ;
+                      rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#Endurant
+:Endurant rdf:type owl:Class ;
+          rdfs:subClassOf :ProcessEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#EngineeringArtifact
+:EngineeringArtifact rdf:type owl:Class ;
+                     rdfs:subClassOf :Artifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#EngineeringStakeholder
+:EngineeringStakeholder rdf:type owl:Class ;
+                        rdfs:subClassOf :Stakeholder .
+
+
+###  http://w3id.org/unified-engineering/requirements#EquipmentList
+:EquipmentList rdf:type owl:Class ;
+               rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf :Perdurant ,
+                       :StateMachineEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#EventDrivenRequirement
+:EventDrivenRequirement rdf:type owl:Class ;
+                        rdfs:subClassOf :Requirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#Feature
+:Feature rdf:type owl:Class ;
+         rdfs:subClassOf :SystemDesignEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#FireSafetyPlan
+:FireSafetyPlan rdf:type owl:Class ;
+                rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#FunctionalContext
+:FunctionalContext rdf:type owl:Class ;
+                   rdfs:subClassOf :Context .
+
+
+###  http://w3id.org/unified-engineering/requirements#FunctionalRequirement
+:FunctionalRequirement rdf:type owl:Class ;
+                       rdfs:subClassOf :SpecificRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#GeneralRequirement
+:GeneralRequirement rdf:type owl:Class ;
+                    rdfs:subClassOf :Requirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#GenericContext
+:GenericContext rdf:type owl:Class ;
+                rdfs:subClassOf :Context .
+
+
+###  http://w3id.org/unified-engineering/requirements#Goal
+:Goal rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/requirements#GoalState
+:GoalState rdf:type owl:Class ;
+           rdfs:subClassOf :State .
+
+
+###  http://w3id.org/unified-engineering/requirements#HVACSystemPlan
+:HVACSystemPlan rdf:type owl:Class ;
+                rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#HumanAgent
+:HumanAgent rdf:type owl:Class ;
+            rdfs:subClassOf :Agent .
+
+
+###  http://w3id.org/unified-engineering/requirements#Installer
+:Installer rdf:type owl:Class ;
+           rdfs:subClassOf :EngineeringStakeholder .
+
+
+###  http://w3id.org/unified-engineering/requirements#Invariant
+:Invariant rdf:type owl:Class ;
+           rdfs:subClassOf :Constraint .
+
+
+###  http://w3id.org/unified-engineering/requirements#LightingSystemPlan
+:LightingSystemPlan rdf:type owl:Class ;
+                    rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#Locality
+:Locality rdf:type owl:Class ;
+          rdfs:subClassOf :SystemDesignEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#LocationalContext
+:LocationalContext rdf:type owl:Class ;
+                   rdfs:subClassOf :TopologicalContext .
+
+
+###  http://w3id.org/unified-engineering/requirements#MaintainanceGoal
+:MaintainanceGoal rdf:type owl:Class ;
+                  rdfs:subClassOf :Goal .
+
+
+###  http://w3id.org/unified-engineering/requirements#Maintainer
+:Maintainer rdf:type owl:Class ;
+            rdfs:subClassOf :EngineeringStakeholder .
+
+
+###  http://w3id.org/unified-engineering/requirements#Measure
+:Measure rdf:type owl:Class ;
+         rdfs:subClassOf :Action .
+
+
+###  http://w3id.org/unified-engineering/requirements#NetworkContext
+:NetworkContext rdf:type owl:Class ;
+                rdfs:subClassOf :TopologicalContext .
+
+
+###  http://w3id.org/unified-engineering/requirements#NetworkDevicesPlan
+:NetworkDevicesPlan rdf:type owl:Class ;
+                    rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#NonFunctionalRequirement
+:NonFunctionalRequirement rdf:type owl:Class ;
+                          rdfs:subClassOf :SpecificRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#Norm
+:Norm rdf:type owl:Class ;
+      rdfs:subClassOf :Requirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#ObservedEntity
+:ObservedEntity rdf:type owl:Class ;
+                rdfs:subClassOf :ProcessEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#ObservingEntity
+:ObservingEntity rdf:type owl:Class ;
+                 rdfs:subClassOf :ProcessEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf :OrganizationalEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#OrganizationalEntity
+:OrganizationalEntity rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/requirements#Perdurant
+:Perdurant rdf:type owl:Class ;
+           rdfs:subClassOf :ProcessEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#PhysicalState
+:PhysicalState rdf:type owl:Class ;
+               rdfs:subClassOf :Circumstance .
+
+
+###  http://w3id.org/unified-engineering/requirements#PlatformRequirement
+:PlatformRequirement rdf:type owl:Class ;
+                     rdfs:subClassOf :SpecificRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#PlumbingSystemPlan
+:PlumbingSystemPlan rdf:type owl:Class ;
+                    rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#PostCondition
+:PostCondition rdf:type owl:Class ;
+               rdfs:subClassOf :Condition .
+
+
+###  http://w3id.org/unified-engineering/requirements#PreCondition
+:PreCondition rdf:type owl:Class ;
+              rdfs:subClassOf :Condition .
+
+
+###  http://w3id.org/unified-engineering/requirements#Process
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf :Perdurant .
+
+
+###  http://w3id.org/unified-engineering/requirements#ProcessActor
+:ProcessActor rdf:type owl:Class ;
+              rdfs:subClassOf :ProcessEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#ProcessEntity
+:ProcessEntity rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/requirements#ProcessPosition
+:ProcessPosition rdf:type owl:Class ;
+                 rdfs:subClassOf :TopologicalContext .
+
+
+###  http://w3id.org/unified-engineering/requirements#ProcessRequirement
+:ProcessRequirement rdf:type owl:Class ;
+                    rdfs:subClassOf :SpecificRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#ProcessState
+:ProcessState rdf:type owl:Class ;
+              rdfs:subClassOf :Circumstance .
+
+
+###  http://w3id.org/unified-engineering/requirements#Programmer
+:Programmer rdf:type owl:Class ;
+            rdfs:subClassOf :EngineeringStakeholder .
+
+
+###  http://w3id.org/unified-engineering/requirements#ProjectContract
+:ProjectContract rdf:type owl:Class ;
+                 rdfs:subClassOf :Artifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#Regulation
+:Regulation rdf:type owl:Class ;
+            rdfs:subClassOf :Requirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#Regulator
+:Regulator rdf:type owl:Class ;
+           rdfs:subClassOf :Stakeholder .
+
+
+###  http://w3id.org/unified-engineering/requirements#ReliabilityRequirement
+:ReliabilityRequirement rdf:type owl:Class ;
+                        rdfs:subClassOf :NonFunctionalRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#Requirement
+:Requirement rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/requirements#SalesOffer
+:SalesOffer rdf:type owl:Class ;
+            rdfs:subClassOf :Artifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#Scenario
+:Scenario rdf:type owl:Class ;
+          rdfs:subClassOf :Story .
+
+
+###  http://w3id.org/unified-engineering/requirements#SecurityRequirement
+:SecurityRequirement rdf:type owl:Class ;
+                     rdfs:subClassOf :NonFunctionalRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#SecuritySystemPlan
+:SecuritySystemPlan rdf:type owl:Class ;
+                    rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#Sensor
+:Sensor rdf:type owl:Class ;
+        rdfs:subClassOf :Component ,
+                        :ObservingEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#SoftwareProgram
+:SoftwareProgram rdf:type owl:Class ;
+                 rdfs:subClassOf :EngineeringArtifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#SpecificContext
+:SpecificContext rdf:type owl:Class ;
+                 rdfs:subClassOf :Context .
+
+
+###  http://w3id.org/unified-engineering/requirements#SpecificRequirement
+:SpecificRequirement rdf:type owl:Class ;
+                     rdfs:subClassOf :Requirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#Stakeholder
+:Stakeholder rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/requirements#State
+:State rdf:type owl:Class ;
+       rdfs:subClassOf :Perdurant ,
+                       :StateMachineEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#StateDrivenRequirement
+:StateDrivenRequirement rdf:type owl:Class ;
+                        rdfs:subClassOf :Requirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#StateMachineEntity
+:StateMachineEntity rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/requirements#Stimulus
+:Stimulus rdf:type owl:Class ;
+          rdfs:subClassOf :ProcessEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#Story
+:Story rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/requirements#SubDiscipline
+:SubDiscipline rdf:type owl:Class ;
+               rdfs:subClassOf :OrganizationalEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#SubSystem
+:SubSystem rdf:type owl:Class ;
+           rdfs:subClassOf :SystemDesignEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#Substance
+:Substance rdf:type owl:Class ;
+           rdfs:subClassOf :Endurant ,
+                           :ObservedEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#System
+:System rdf:type owl:Class ;
+        rdfs:subClassOf :SystemDesignEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#SystemDesignEntity
+:SystemDesignEntity rdf:type owl:Class .
+
+
+###  http://w3id.org/unified-engineering/requirements#SystemDesigner
+:SystemDesigner rdf:type owl:Class ;
+                rdfs:subClassOf :Stakeholder .
+
+
+###  http://w3id.org/unified-engineering/requirements#SystemOperator
+:SystemOperator rdf:type owl:Class ;
+                rdfs:subClassOf :Stakeholder .
+
+
+###  http://w3id.org/unified-engineering/requirements#SystemUser
+:SystemUser rdf:type owl:Class ;
+            rdfs:subClassOf :Stakeholder .
+
+
+###  http://w3id.org/unified-engineering/requirements#TenderDocument
+:TenderDocument rdf:type owl:Class ;
+                rdfs:subClassOf :Artifact .
+
+
+###  http://w3id.org/unified-engineering/requirements#TopologicalContext
+:TopologicalContext rdf:type owl:Class ;
+                    rdfs:subClassOf :Context .
+
+
+###  http://w3id.org/unified-engineering/requirements#Transition
+:Transition rdf:type owl:Class ;
+            rdfs:subClassOf :StateMachineEntity .
+
+
+###  http://w3id.org/unified-engineering/requirements#UbiquitousRequirement
+:UbiquitousRequirement rdf:type owl:Class ;
+                       rdfs:subClassOf :Requirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#UsabilityRequirement
+:UsabilityRequirement rdf:type owl:Class ;
+                      rdfs:subClassOf :NonFunctionalRequirement .
+
+
+###  http://w3id.org/unified-engineering/requirements#UseCase
+:UseCase rdf:type owl:Class ;
+         rdfs:subClassOf :Story .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://w3id.org/unified-engineering/requirements#achieve
+:achieve rdf:type owl:NamedIndividual .
+
+
+###  http://w3id.org/unified-engineering/requirements#airdistribution
+:airdistribution rdf:type owl:NamedIndividual ,
+                          :SubDiscipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#automation
+:automation rdf:type owl:NamedIndividual ,
+                     :Discipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#domesticwater
+:domesticwater rdf:type owl:NamedIndividual ,
+                        :SubDiscipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#electrical
+:electrical rdf:type owl:NamedIndividual ,
+                     :Discipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#firedetection
+:firedetection rdf:type owl:NamedIndividual ,
+                        :Discipline ,
+                        :SubDiscipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#fireextinguishing
+:fireextinguishing rdf:type owl:NamedIndividual ,
+                            :SubDiscipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#firesafety
+:firesafety rdf:type owl:NamedIndividual ,
+                     :Discipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#firevacuation
+:firevacuation rdf:type owl:NamedIndividual ,
+                        :SubDiscipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#heating
+:heating rdf:type owl:NamedIndividual ,
+                  :Discipline ,
+                  :SubDiscipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#hvac
+:hvac rdf:type owl:NamedIndividual ,
+               :Discipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#lighting
+:lighting rdf:type owl:NamedIndividual ,
+                   :Discipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#maintain
+:maintain rdf:type owl:NamedIndividual .
+
+
+###  http://w3id.org/unified-engineering/requirements#plumbing
+:plumbing rdf:type owl:NamedIndividual ,
+                   :Discipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#prevent
+:prevent rdf:type owl:NamedIndividual .
+
+
+###  http://w3id.org/unified-engineering/requirements#roomautomation
+:roomautomation rdf:type owl:NamedIndividual ,
+                         :SubDiscipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#security
+:security rdf:type owl:NamedIndividual ,
+                   :Discipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#shading
+:shading rdf:type owl:NamedIndividual ,
+                  :Discipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#ventilation
+:ventilation rdf:type owl:NamedIndividual ,
+                      :SubDiscipline .
+
+
+###  http://w3id.org/unified-engineering/requirements#waterdistribution
+:waterdistribution rdf:type owl:NamedIndividual ,
+                            :SubDiscipline .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

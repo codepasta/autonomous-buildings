@@ -104,6 +104,10 @@
 :isCommitedTo rdf:type owl:ObjectProperty .
 
 
+###  https://w3id.org/interont#isRelevantForRole
+:isRelevantForRole rdf:type owl:ObjectProperty .
+
+
 ###  https://w3id.org/interont#nullifies
 :nullifies rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :hasParameterBinding .
